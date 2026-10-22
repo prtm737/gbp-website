@@ -1,0 +1,332 @@
+:root {
+  --ease-out: cubic-bezier(0.22, 0.7, 0.2, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes gbp-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes gbp-fade-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes gbp-frame-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes gbp-badge-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.82) rotate(12deg);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.04) rotate(6deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(7deg);
+  }
+}
+
+@keyframes gbp-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(7deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+@keyframes gbp-drift {
+  from {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(5%, 4%, 0) scale(1.16);
+  }
+}
+
+@keyframes gbp-orbit {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+/* Page-load choreography */
+.js .topbar-inner {
+  animation: gbp-fade-down 0.55s var(--ease-out) both;
+}
+
+.js .header-inner {
+  animation: gbp-fade-down 0.7s var(--ease-out) 0.06s both;
+}
+
+.js .hero-copy > * {
+  animation: gbp-rise 0.85s var(--ease-out) both;
+}
+
+.js .hero-copy > :nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.js .hero-copy > :nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.js .hero-copy > :nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.js .hero-copy > :nth-child(4) {
+  animation-delay: 0.32s;
+}
+
+.js .hero-copy > :nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.js .hero-frame {
+  animation: gbp-frame-in 1s var(--ease-spring) 0.2s both;
+}
+
+.js .hero-mini {
+  animation: gbp-frame-in 0.9s var(--ease-spring) 0.36s both;
+}
+
+.js .hero-badge {
+  animation: gbp-badge-in 0.8s var(--ease-spring) 0.5s both, gbp-float 7s ease-in-out 1.4s infinite;
+}
+
+.js .page-hero > .wrap > * {
+  animation: gbp-rise 0.72s var(--ease-out) both;
+}
+
+.js .page-hero > .wrap > :nth-child(1) {
+  animation-delay: 0.04s;
+}
+
+.js .page-hero > .wrap > :nth-child(2) {
+  animation-delay: 0.11s;
+}
+
+.js .page-hero > .wrap > :nth-child(3) {
+  animation-delay: 0.18s;
+}
+
+.js .page-hero > .wrap > :nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+.js .page-hero > .wrap > :nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+/* Ambient motion */
+.hero-grid-bg::before {
+  content: "";
+  position: absolute;
+  top: -24%;
+  left: -12%;
+  width: min(680px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--lime) 52%, transparent), transparent 68%);
+  filter: blur(26px);
+  opacity: 0.55;
+  animation: gbp-drift 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.cta-orbit {
+  animation: gbp-orbit 48s linear infinite;
+}
+
+/* Staggered reveals */
+.js .reveal {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Scroll progress */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--lime), var(--green));
+  transform: scaleX(var(--scroll, 0));
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+/* Buttons and links */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: -40% -30%;
+  background: linear-gradient(110deg, transparent 32%, rgba(255, 255, 255, 0.3) 48%, transparent 62%);
+  transform: translateX(-85%) rotate(6deg);
+  transition: transform 0.7s var(--ease-out);
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  transform: translateX(85%) rotate(6deg);
+}
+
+.primary-nav a {
+  position: relative;
+}
+
+.primary-nav a::after {
+  content: "";
+  position: absolute;
+  right: 13px;
+  bottom: 5px;
+  left: 13px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.45;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.28s var(--ease-out);
+}
+
+.primary-nav a:hover::after,
+.primary-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* Card polish */
+:is(
+    .pillar,
+    .facility-card,
+    .incubatee-card,
+    .benefit-card,
+    .download-card,
+    .leader-card,
+    .person-card,
+    .why-card,
+    .vm-card,
+    .eco-group,
+    .notice-panel
+  ) {
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.35s var(--ease-out);
+}
+
+:is(
+    .pillar,
+    .facility-card,
+    .incubatee-card,
+    .benefit-card,
+    .download-card,
+    .leader-card,
+    .person-card,
+    .why-card,
+    .vm-card,
+    .eco-group,
+    .notice-panel
+  ):hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 64px -42px rgba(6, 44, 31, 0.62), 0 0 0 1px color-mix(in srgb, var(--green) 22%, transparent);
+}
+
+:is(.contact-form, .team-group):hover {
+  box-shadow: 0 30px 64px -44px rgba(6, 44, 31, 0.5), 0 0 0 1px color-mix(in srgb, var(--green) 16%, transparent);
+}
+
+.logo-tile img {
+  transition: filter 0.25s ease, opacity 0.25s ease, transform 0.4s var(--ease-out);
+}
+
+.logo-tile:hover img {
+  transform: scale(1.06);
+}
+
+.news-item:hover .news-date {
+  color: var(--green);
+}
+
+/* Cursor glow on the bento cards */
+.bento-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(201, 242, 107, 0.18), transparent 62%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.bento-card:hover::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .topbar-inner,
+  .js .header-inner,
+  .js .hero-copy > *,
+  .js .hero-frame,
+  .js .hero-mini,
+  .js .hero-badge,
+  .js .page-hero > .wrap > *,
+  .hero-grid-bg::before,
+  .cta-orbit {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .js .hero-badge {
+    transform: rotate(7deg) !important;
+  }
+
+  .cta-orbit {
+    transform: translateY(-50%) !important;
+  }
+
+  .scroll-progress,
+  .btn::after,
+  .bento-card::after {
+    display: none;
+  }
+
+  .js .reveal {
+    transition: none;
+  }
+}
