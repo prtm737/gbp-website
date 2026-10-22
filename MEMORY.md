@@ -63,7 +63,31 @@ JSON-LD before finishing. Generated root `*.html`, `sitemap.xml`, `robots.txt` a
 - Mirror legacy PDFs instead of redirecting them, to preserve old document links.
 - Campus location corrected to **Amingaon**; avoid “north bank of the Brahmaputra”.
 
+## Editor access (Pages CMS)
+
+1. Open `https://app.pagescms.org` and sign in with GitHub.
+2. Authorize the Pages CMS GitHub App for `prtm737/gbp-website`; choose branch `main`.
+3. Collections come from `.pages.yml`:
+   - **Achievements & activities** — add/edit entries, upload a cover photo, extra
+     gallery photos, and paste a YouTube/Vimeo URL for video.
+   - **News & notices**, **Incubatees**, **Facilities**, **Downloads**, **Staff**,
+     **Site settings**, **Navigation**, **Pages & SEO**, **Homepage sections**, etc.
+4. Media uploads go to `assets/uploads/` (set in `.pages.yml`). Save = commit to
+   `main` = Netlify rebuild. Videos must be YouTube/Vimeo links, not MP4 uploads.
+5. Editors need a GitHub account with write access to the repo
+   (GitHub → Settings → Collaborators). The public repo only exposes content,
+   never secrets.
+
 ## Update log
+
+### 2026-10-22 14:10 IST — Pushed to GitHub
+- Committed all work as `e1eef51` and pushed `main` to
+  `https://github.com/prtm737/gbp-website`.
+- Repo is public; 89 files in the commit, including 33 mirrored PDFs and generated
+  images.
+- Netlify deployment is **pending**: no Netlify CLI/auth token exists in this
+  environment. Import the repo at Netlify (build `node build.mjs`, publish `dist`);
+  `netlify.toml` supplies the rest.
 
 ### 2026-10-22 14:00 IST — Initial memory file
 - Created `MEMORY.md` to record project state and every future update.
