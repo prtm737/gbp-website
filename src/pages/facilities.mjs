@@ -1,5 +1,5 @@
 import { icon } from '../icons.mjs';
-import { FACILITIES, SITE } from '../data.mjs';
+import { FACILITIES, LABS, INSTRUMENTS, SITE } from '../data.mjs';
 import { pageHero, sectionHead, anchorBar, ctaBand } from '../components.mjs';
 
 function tic() {
@@ -144,6 +144,73 @@ function otherFacilities() {
   </section>`;
 }
 
+function specialised() {
+  return `<section class="section" id="specialised">
+    <div class="wrap">
+      ${sectionHead({
+        eyebrow: 'Specialised facilities',
+        title: 'Shared science, at full strength.',
+        note: 'Eight specialist facilities support projects that would be too costly to build alone — each with a published charge list and requisition process.',
+        link: { label: 'Download forms', href: 'news.html#publications' }
+      })}
+      <div class="lab-grid">
+        ${LABS.map(
+          (lab) => `<article class="lab-card reveal" id="${lab.id}">
+            <div class="lab-top">
+              <span class="facility-icon">${icon(lab.icon)}</span>
+              <span class="tag tag-neutral">${lab.short}</span>
+            </div>
+            <h3>${lab.title}</h3>
+            <p>${lab.text}</p>
+            <ul class="mini-list">
+              ${lab.points.map((point) => `<li>${icon('check')} ${point}</li>`).join('')}
+            </ul>
+            <div class="lab-docs">
+              ${lab.docs.map((d) => `<a class="lab-doc" href="${d.href}" target="_blank" rel="noopener">${icon('file')} ${d.label}</a>`).join('')}
+            </div>
+          </article>`
+        ).join('')}
+      </div>
+    </div>
+  </section>`;
+}
+
+function instruments() {
+  return `<section class="section section-dark" id="instruments">
+    <div class="wrap">
+      ${sectionHead({
+        eyebrow: 'Instrumentation',
+        title: 'The bench list.',
+        note: 'Ninety instruments and general utility facilities are available at the Technology Incubation Centre, from LC-MS/MS and confocal microscopy to fermenters and cold storage.',
+        dark: true
+      })}
+      <div class="instrument-shell reveal">
+        <div class="instrument-head">
+          <label class="instrument-search">
+            <span class="sr-only">Search instruments</span>
+            ${icon('search')}
+            <input id="instrument-search" type="search" placeholder="Search by instrument or make…" autocomplete="off">
+          </label>
+          <span class="instrument-count" data-instrument-count aria-live="polite">${INSTRUMENTS.length} instruments</span>
+        </div>
+        <div class="table-scroll instrument-scroll">
+          <table class="instrument-table" id="instrument-table">
+            <caption class="sr-only">Instruments and equipment available at Guwahati Biotech Park</caption>
+            <thead><tr><th scope="col">Instrument / equipment</th><th scope="col">Make / model</th></tr></thead>
+            <tbody>
+              ${INSTRUMENTS.map(
+                (i) => `<tr data-search="${`${i.name} ${i.make}`.toLowerCase()}"><th scope="row">${i.name}</th><td>${i.make}</td></tr>`
+              ).join('')}
+            </tbody>
+          </table>
+        </div>
+        <p class="filter-empty instrument-empty" data-instrument-empty>No instruments match that search.</p>
+      </div>
+      <p class="small-note instrument-note">Instrument access is subject to availability, training and the park’s current charge list. Write to <a href="mailto:${SITE.email}">${SITE.email}</a> to plan a run.</p>
+    </div>
+  </section>`;
+}
+
 function specs() {
   return `<section class="section section-dark">
     <div class="wrap">
@@ -178,11 +245,15 @@ export function facilitiesPage() {
     { id: 'nidhi', label: 'Prototyping' },
     { id: 'bicfa', label: 'Fisheries' },
     { id: 'training', label: 'Training' },
+    { id: 'specialised', label: 'Specialised labs' },
+    { id: 'instruments', label: 'Instruments' },
     { id: 'infrastructure', label: 'Campus' }
   ])}
   ${tic()}
   ${rhtl()}
+  ${specialised()}
   ${otherFacilities()}
+  ${instruments()}
   ${specs()}
   ${ctaBand({
     eyebrow: 'Access a facility',

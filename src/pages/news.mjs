@@ -1,6 +1,6 @@
 import { icon } from '../icons.mjs';
-import { NEWS, CATEGORIES, SITE } from '../data.mjs';
-import { pageHero, newsItem, ctaBand } from '../components.mjs';
+import { NEWS, CATEGORIES, PUBLICATIONS, SITE } from '../data.mjs';
+import { pageHero, sectionHead, newsItem, ctaBand } from '../components.mjs';
 
 function counts() {
   return CATEGORIES.reduce((acc, c) => {
@@ -42,6 +42,40 @@ function noticePanel() {
   </aside>`;
 }
 
+function publications() {
+  const groups = [...new Set(PUBLICATIONS.map((p) => p.group))];
+  return `<section class="section section-tint" id="publications">
+    <div class="wrap">
+      ${sectionHead({
+        eyebrow: 'Publications',
+        title: 'The park, in print.',
+        note: 'Newsletters, policy documents, magazines and programme guides from Guwahati Biotech Park. Older newsletter issues are available from the administration on request.',
+        link: { label: 'Latest notices', href: 'news.html#updates' }
+      })}
+      <div class="pub-grid">
+        ${groups
+          .map(
+            (group) => `<div class="pub-column reveal">
+              <h3>${group}</h3>
+              <ul class="pub-list">
+                ${PUBLICATIONS.filter((p) => p.group === group)
+                  .map(
+                    (p) => `<li><a href="${p.href}" target="_blank" rel="noopener">
+                      <span class="pub-icon">${icon('file')}</span>
+                      <span class="pub-copy"><strong>${p.title}</strong><small>${p.note}</small></span>
+                      <span class="pub-arrow">${icon('download')}</span>
+                    </a></li>`
+                  )
+                  .join('')}
+              </ul>
+            </div>`
+          )
+          .join('')}
+      </div>
+    </div>
+  </section>`;
+}
+
 export function newsPage() {
   return `${pageHero({
     crumbs: ['News & tenders'],
@@ -61,6 +95,7 @@ export function newsPage() {
       <p class="small-note news-foot-note">Always confirm deadlines and current openings with the administration. Procurement and recruitment notices are published in the public interest.</p>
     </div>
   </section>
+  ${publications()}
   ${ctaBand({
     eyebrow: 'Stay connected',
     title: 'Have a question about a notice?',

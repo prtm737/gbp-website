@@ -112,16 +112,25 @@
   animation-delay: 0.4s;
 }
 
-.js .hero-frame {
-  animation: gbp-frame-in 1s var(--ease-spring) 0.2s both;
+@keyframes gbp-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.js .hero-mini {
-  animation: gbp-frame-in 0.9s var(--ease-spring) 0.36s both;
+.js .hero-deck {
+  animation: gbp-fade-in 0.9s var(--ease-out) 0.16s both;
+}
+
+.js .hero-photo {
+  animation: gbp-fade-in 0.9s var(--ease-out) 0.34s both;
 }
 
 .js .hero-badge {
   animation: gbp-badge-in 0.8s var(--ease-spring) 0.5s both, gbp-float 7s ease-in-out 1.4s infinite;
+}
+
+.js .hero-hub-card {
+  animation: gbp-fade-in 0.8s var(--ease-out) 0.62s both;
 }
 
 .js .page-hero > .wrap > * {
@@ -301,9 +310,10 @@
   .js .topbar-inner,
   .js .header-inner,
   .js .hero-copy > *,
-  .js .hero-frame,
-  .js .hero-mini,
+  .js .hero-deck,
+  .js .hero-photo,
   .js .hero-badge,
+  .js .hero-hub-card,
   .js .page-hero > .wrap > *,
   .hero-grid-bg::before,
   .cta-orbit {
@@ -314,6 +324,14 @@
 
   .js .hero-badge {
     transform: rotate(7deg) !important;
+  }
+
+  .hero-deck {
+    transform: none !important;
+  }
+
+  .hero-photo {
+    transform: none !important;
   }
 
   .cta-orbit {

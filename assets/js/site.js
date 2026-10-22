@@ -659,3 +659,54 @@
     });
   }
 })();
+
+(function instrumentFilter() {
+  var input = document.getElementById('instrument-search');
+  var table = document.getElementById('instrument-table');
+  if (!input || !table) return;
+  var rows = table.querySelectorAll('tbody tr');
+  var empty = document.querySelector('[data-instrument-empty]');
+  var count = document.querySelector('[data-instrument-count]');
+
+  input.addEventListener('input', function () {
+    var query = input.value.trim().toLowerCase();
+    var visible = 0;
+    for (var i = 0; i < rows.length; i += 1) {
+      var match = !query || (rows[i].getAttribute('data-search') || '').indexOf(query) !== -1;
+      rows[i].hidden = !match;
+      if (match) visible += 1;
+    }
+    if (empty) empty.classList.toggle('is-visible', visible === 0);
+    if (count) count.textContent = visible + (visible === 1 ? ' instrument' : ' instruments');
+  });
+})();
+
+(function heroTilt() {
+  var visual = document.querySelector('[data-hero-tilt]');
+  if (!visual) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var ticking = false;
+
+  function reset() {
+    visual.style.setProperty('--hero-tilt-x', '0deg');
+    visual.style.setProperty('--hero-tilt-y', '0deg');
+  }
+
+  visual.addEventListener('pointermove', function (event) {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      var rect = visual.getBoundingClientRect();
+      var x = (event.clientX - rect.left) / rect.width - 0.5;
+      var y = (event.clientY - rect.top) / rect.height - 0.5;
+      visual.style.setProperty('--hero-tilt-y', (x * 7).toFixed(2) + 'deg');
+      visual.style.setProperty('--hero-tilt-x', (-y * 5).toFixed(2) + 'deg');
+      ticking = false;
+    });
+  });
+
+  visual.addEventListener('pointerleave', reset);
+  visual.addEventListener('blur', reset);
+})();

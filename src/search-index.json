@@ -166,5 +166,40 @@
     "desc": "Application format, applicant information, annexures and floor plan.",
     "href": "incubation.html#downloads",
     "keywords": "download pdf application format annexure floor plan requisition"
+  },
+  {
+    "kind": "Section",
+    "title": "Governance and Council of Management",
+    "desc": "Governing Body, Council of Management, Technical Advisory Board and key office bearers.",
+    "href": "about.html#governance",
+    "keywords": "governance governing body council management technical advisory board chief minister minister chief secretary ceo"
+  },
+  {
+    "kind": "Section",
+    "title": "Specialised facilities",
+    "desc": "CAIF, bioprospecting, micropropagation, herbal extraction, fermentation, utilities, greenhouse and cold room.",
+    "href": "facilities.html#specialised",
+    "keywords": "specialised labs caif bioprospecting micropropagation herbal extraction fermentation greenhouse cold room charge list requisition"
+  },
+  {
+    "kind": "Section",
+    "title": "Instruments and equipment",
+    "desc": "Search 90 instruments available at the Technology Incubation Centre.",
+    "href": "facilities.html#instruments",
+    "keywords": "instruments equipment lc-ms gc-ms hplc microscope fermenter centrifuge pcr spectrometer"
+  },
+  {
+    "kind": "Section",
+    "title": "Publications",
+    "desc": "Newsletters, biotechnology policy, magazine, brochure and programme guides.",
+    "href": "news.html#publications",
+    "keywords": "publications newsletter gbp today policy magazine bioline brochure success stories download"
+  },
+  {
+    "kind": "Section",
+    "title": "Photo hub",
+    "desc": "Events, visits, facilities and milestones in photographs.",
+    "href": "achievements.html#gallery",
+    "keywords": "photos gallery events visits campus milestones images"
   }
 ]

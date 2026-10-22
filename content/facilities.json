@@ -128,5 +128,19 @@
       "Cafeteria and common campus services",
       "Developed land with common infrastructure"
     ]
+  },
+  {
+    "id": "ssc",
+    "icon": "users",
+    "title": "Skill Satellite Centre",
+    "short": "SSC",
+    "tag": "Capacity building",
+    "text": "A DSIR-supported Skill Satellite Centre running capacity-building programmes for women in biotechnology, entrepreneurship and allied rural enterprises.",
+    "points": [
+      "Mushroom cultivation and spawn production",
+      "Low-cost organic compost and bio-fertiliser",
+      "Value-added products, marketing and enterprise skills",
+      "Flexible, local training for women and self-help groups"
+    ]
   }
 ]

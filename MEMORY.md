@@ -80,6 +80,25 @@ JSON-LD before finishing. Generated root `*.html`, `sitemap.xml`, `robots.txt` a
 
 ## Update log
 
+### 2026-10-22 15:20 IST — Content migration and premium hero
+- Scraped `guwahatibiotechpark.com` pages and rebuilt the remaining content:
+  governance/key people, eight specialised facilities with charge lists and
+  requisition forms, 90 instruments, and a curated publications library.
+- New content models wired through `src/data.mjs` and `.pages.yml`:
+  `governance.json`, `labs.json`, `instruments.json`, `publications.json`.
+- Added sections: About → governance + Council of Management; Facilities →
+  specialised labs and searchable instrument table; News → publications.
+- Added 10 real activity entries to `content/achievements.json` using downloaded
+  event and success-story photos (PMMSY, Biomanufacturing Summit, IISF, Global
+  Bio-India, BICFA biofloc, exposure visits, AROHAN, Khaisua, Fuloni, Medinovation).
+- Mirrored 30 more legacy PDFs; `wp-content/` is now 65 MB and `dist/` is 71 MB.
+- Build now rewrites mirrored `/wp-content/` links to local paths only when the
+  file exists, so missing mirrors stay on the original domain.
+- Redesigned the homepage hero as a photo-hub composition using real park photos,
+  with pointer tilt and reduced-motion fallbacks.
+- Verification: build succeeds; 8 pages; 0 broken internal links; valid JSON-LD.
+- Not verified visually: no browser/Chromium available in this environment.
+
 ### 2026-10-22 14:10 IST — Pushed to GitHub
 - Committed all work as `e1eef51` and pushed `main` to
   `https://github.com/prtm737/gbp-website`.

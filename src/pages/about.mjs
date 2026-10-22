@@ -1,5 +1,5 @@
 import { icon } from '../icons.mjs';
-import { SITE, FAQS, LEADERSHIP, INSTITUTES } from '../data.mjs';
+import { SITE, FAQS, LEADERSHIP, INSTITUTES, GOVERNANCE } from '../data.mjs';
 import { pageHero, sectionHead, ctaBand } from '../components.mjs';
 
 function story() {
@@ -146,7 +146,62 @@ function people() {
       </div>
       <div class="council-note">
         <p>The Council of Management includes representatives of the Government of Assam, the Department of Biotechnology and partner institutions.</p>
-        <a class="text-link" href="about.html#people">Council of Management and key persons ${icon('arrow')}</a>
+        <a class="text-link" href="#governance">Council of Management and key persons ${icon('arrow')}</a>
+      </div>
+    </div>
+  </section>`;
+}
+
+function governance() {
+  const people = GOVERNANCE.keyPeople;
+  return `<section class="section section-tint" id="governance">
+    <div class="wrap">
+      ${sectionHead({
+        eyebrow: 'Governance',
+        title: 'Stewards of a public mission.',
+        note: 'The park is guided by a Governing Body, a Council of Management and a Technical Advisory Board, with representatives from the Government of Assam, DBT and partner institutions.'
+      })}
+      <div class="governance-grid">
+        ${people
+          .map(
+            (p) => `<article class="governance-card reveal">
+              <div class="governance-photo">
+                ${
+                  p.image
+                    ? `<img src="${p.image}" alt="${p.name}" width="180" height="180" loading="lazy">`
+                    : `<span class="governance-initials" aria-hidden="true">${p.initials}</span>`
+                }
+              </div>
+              <div class="governance-copy">
+                <span class="person-tag">${p.context.includes('Governing Body') ? 'Governing Body' : p.context.includes('Council of Management') ? 'Council of Management' : 'Advisory'}</span>
+                <h3>${p.name}</h3>
+                <p>${p.role}</p>
+                <small>${p.context}</small>
+              </div>
+            </article>`
+          )
+          .join('')}
+      </div>
+
+      <div class="council-block reveal">
+        <div class="council-head">
+          <span class="eyebrow">Council of Management</span>
+          <h3>How the park is governed.</h3>
+          <p>The Council brings together the State administration, finance, planning, agriculture and science departments, IIT Guwahati and independent biotechnology experts.</p>
+        </div>
+        <div class="table-scroll">
+          <table class="council-table">
+            <caption class="sr-only">Council of Management composition</caption>
+            <thead><tr><th scope="col">Designation</th><th scope="col">Position</th></tr></thead>
+            <tbody>
+              ${GOVERNANCE.council
+                .map(
+                  (c) => `<tr><th scope="row">${c.designation}</th><td>${c.position}</td></tr>`
+                )
+                .join('')}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>`;
@@ -185,6 +240,7 @@ export function aboutPage() {
   ${why()}
   ${ecosystem()}
   ${people()}
+  ${governance()}
   ${faq()}
   ${ctaBand({
     eyebrow: 'Work with us',

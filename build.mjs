@@ -1,4 +1,5 @@
 import { writeFile, readFile, copyFile, cp, rm, mkdir } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { page } from './src/layout.mjs';
 import { customSections } from './src/components.mjs';
 import { PAGES, SITE } from './src/data.mjs';
@@ -41,12 +42,18 @@ const xml = (value) =>
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 
+const localiseDocs = (html) =>
+  html.replace(/https:\/\/www\.guwahatibiotechpark\.com\/(wp-content\/[^"' )]+)/g, (match, path) =>
+    existsSync(path) ? path : match
+  );
+
 const cssParts = [
   '00-base.css',
   '10-shell.css',
   '20-home.css',
   '22-content.css',
   '26-achievements.css',
+  '28-content.css',
   '30-inner.css',
   '32-incubation.css',
   '34-contact.css',
@@ -132,7 +139,7 @@ for (const p of pages) {
       ticker: Boolean(p.ticker)
     })
   );
-  await writeFile(p.file, html, 'utf8');
+  await writeFile(p.file, localiseDocs(html), 'utf8');
   console.log(`built ${p.file} (${(Buffer.byteLength(html) / 1024).toFixed(1)} kB)`);
 }
 
@@ -155,7 +162,7 @@ const notFound = polish(
     </section>`
   })
 );
-await writeFile('404.html', notFound, 'utf8');
+await writeFile('404.html', localiseDocs(notFound), 'utf8');
 console.log('built 404.html');
 
 const base = SITE.url.replace(/\/$/, '');

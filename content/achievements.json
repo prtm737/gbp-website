@@ -7,9 +7,13 @@
     "summary": "The on-campus RHTL supports beekeepers, farmer producer organisations and food businesses with quality, authenticity and safety testing, including sugar-profile and heavy-metal analysis.",
     "location": "Regional Honey Testing Laboratory, Amingaon",
     "image": "assets/img/generated/achievement-honey-lab.jpg",
-    "gallery": [],
+    "gallery": [
+      "assets/img/events/rhtl-1.jpg",
+      "assets/img/events/rhtl-2.jpg",
+      "assets/img/events/rhtl-3.jpg"
+    ],
     "videoUrl": "",
-    "featured": true
+    "featured": false
   },
   {
     "id": "arbor-day",
@@ -21,7 +25,7 @@
     "image": "assets/img/generated/achievement-tree-planting.jpg",
     "gallery": [],
     "videoUrl": "",
-    "featured": true
+    "featured": false
   },
   {
     "id": "bio-entrepreneur-training",
@@ -33,7 +37,7 @@
     "image": "assets/img/generated/achievement-training.jpg",
     "gallery": [],
     "videoUrl": "",
-    "featured": true
+    "featured": false
   },
   {
     "id": "nidhi-prayas",
@@ -67,6 +71,150 @@
     "summary": "School, college and university groups visited the park for guided laboratory sessions on analytical instruments, bioinformatics and applied biotechnology.",
     "location": "Guwahati Biotech Park campus, Amingaon",
     "image": "assets/img/generated/achievement-outreach.jpg",
+    "gallery": [],
+    "videoUrl": "",
+    "featured": false
+  },
+  {
+    "id": "pmmsy-anniversary-2024",
+    "date": "2024-09-11",
+    "category": "outreach",
+    "title": "PMMSY’s 4th anniversary and the BICFA story",
+    "summary": "Guwahati Biotech Park joined the national celebration of four years of the Pradhan Mantri Matsya Sampada Yojana, the programme funding the park’s fisheries and aquaculture incubation centre.",
+    "location": "Sushma Swaraj Bhawan, New Delhi",
+    "image": "assets/img/pmssy1-scaled.jpg",
+    "gallery": [
+      "assets/img/events/pmmsy-2.jpg",
+      "assets/img/events/pmmsy-3.jpg",
+      "assets/img/events/pmmsy-4.jpg",
+      "assets/img/events/pmmsy-5.jpg",
+      "assets/img/events/pmmsy-6.jpg"
+    ],
+    "videoUrl": "",
+    "featured": true
+  },
+  {
+    "id": "biomanufacturing-summit-2025",
+    "date": "2025-01-10",
+    "category": "innovation",
+    "title": "International Biomanufacturing Summit 2025",
+    "summary": "GBP was an organising partner at the summit hosted with NEISED and Gauhati University, and welcomed DBT senior advisers for a working session with regional entrepreneurs.",
+    "location": "Gauhati University, Guwahati",
+    "image": "assets/img/events/biomanufacturing-1.jpg",
+    "gallery": [
+      "assets/img/events/biomanufacturing-2.jpg",
+      "assets/img/events/biomanufacturing-3.jpg",
+      "assets/img/events/biomanufacturing-4.jpg",
+      "assets/img/events/biomanufacturing-5.jpg"
+    ],
+    "videoUrl": "",
+    "featured": true
+  },
+  {
+    "id": "iisf-2024",
+    "date": "2024-11-30",
+    "category": "outreach",
+    "title": "GBP at the India International Science Festival 2024",
+    "summary": "The park joined the State’s science and technology showcase at IIT Guwahati, with Dr Bula Choudhury speaking on innovation, technology and the start-up mission.",
+    "location": "IIT Guwahati",
+    "image": "assets/img/events/iisf-1.jpg",
+    "gallery": [
+      "assets/img/events/iisf-2.jpg",
+      "assets/img/events/iisf-3.jpg",
+      "assets/img/events/iisf-4.jpg"
+    ],
+    "videoUrl": "",
+    "featured": true
+  },
+  {
+    "id": "global-bio-india-2024",
+    "date": "2024-09-12",
+    "category": "outreach",
+    "title": "Assam at Global Bio-India 2024",
+    "summary": "Assam participated as a State Partner at the fourth edition of Global Bio-India, where the park presented its facilities, BICFA, NIDHI PRAYAS and the State’s biotech policy.",
+    "location": "Pragati Maidan, New Delhi",
+    "image": "assets/img/IMG-20240914-WA0004.jpg",
+    "gallery": [],
+    "videoUrl": "",
+    "featured": false
+  },
+  {
+    "id": "bicfa-biofloc-inauguration",
+    "date": "2025-01-15",
+    "category": "facility",
+    "title": "BICFA biofloc and laboratory facility inaugurated",
+    "summary": "The Business Incubation Centre for Fisheries and Aquaculture opened its biofloc setup and laboratory, alongside a training manual on ornamental fish farming and aquarium setup.",
+    "location": "BICFA, Guwahati Biotech Park",
+    "image": "assets/img/events/biofloc-1.jpg",
+    "gallery": [
+      "assets/img/events/biofloc-2.jpg",
+      "assets/img/events/biofloc-3.jpg",
+      "assets/img/events/biofloc-4.jpg"
+    ],
+    "videoUrl": "",
+    "featured": false
+  },
+  {
+    "id": "exposure-visits-2024",
+    "date": "2024-06-20",
+    "category": "outreach",
+    "title": "Students explore the labs through exposure visits",
+    "summary": "Teams from Gauhati University, Gurucharan College, Tihu College and BBK College toured the instrumentation, greenhouse, cold room and incubation facilities through 2024.",
+    "location": "Guwahati Biotech Park, Amingaon",
+    "image": "assets/img/events/exposure-gurucharan.jpg",
+    "gallery": [
+      "assets/img/events/exposure-gauhati.jpg",
+      "assets/img/events/exposure-tihu.jpg",
+      "assets/img/events/exposure-bbk.jpg",
+      "assets/img/events/exposure-arohan.jpg"
+    ],
+    "videoUrl": "",
+    "featured": false
+  },
+  {
+    "id": "arohan-visit-2024",
+    "date": "2024-07-31",
+    "category": "outreach",
+    "title": "AROHAN students visit the park",
+    "summary": "Students from government schools in Darrang and Tinsukia explored the laboratories, instrumentation and BICFA’s fisheries incubation work during an AROHAN scheme visit.",
+    "location": "Guwahati Biotech Park, Amingaon",
+    "image": "assets/img/arohan.jpg",
+    "gallery": [],
+    "videoUrl": "",
+    "featured": false
+  },
+  {
+    "id": "khaisua-visit-2024",
+    "date": "2024-08-01",
+    "category": "community",
+    "title": "Visit to Khaisua Foods and Iluscube",
+    "summary": "The GBP team met founder Dhruba Jyoti Kalita to explore collaborations around ready-to-eat foods, ornamental fish and handcrafted planted aquariums.",
+    "location": "Amingaon, Guwahati",
+    "image": "assets/img/khaisua.jpg",
+    "gallery": [],
+    "videoUrl": "",
+    "featured": false
+  },
+  {
+    "id": "fuloni-tia-award",
+    "date": "2024-12-01",
+    "category": "innovation",
+    "title": "Fuloni named Best Environmental Impact Startup",
+    "summary": "Incubatee Fuloni was recognised at the TIA Awards 2024 for plantable, compostable and bioplastic alternatives to conventional horticulture pots.",
+    "location": "Guwahati",
+    "image": "assets/img/stories/fuloni.jpg",
+    "gallery": [],
+    "videoUrl": "",
+    "featured": false
+  },
+  {
+    "id": "medinovation-nbec",
+    "date": "2024-11-01",
+    "category": "innovation",
+    "title": "Medinovation reaches the National Bio Entrepreneurship finale",
+    "summary": "Park incubatee Medinovation Research and Consultancy reached the grand finale of the National Bio Entrepreneurship Competition and was shortlisted for a BioAngels investment proposal.",
+    "location": "C-CAMP, Bengaluru",
+    "image": "assets/img/stories/medinovation.jpg",
     "gallery": [],
     "videoUrl": "",
     "featured": false

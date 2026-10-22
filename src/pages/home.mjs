@@ -308,15 +308,28 @@ function hero() {
           <li>${icon('check')} 13 resident incubatees</li>
         </ul>
       </div>
-      <div class="hero-visual">
-        <figure class="hero-frame">
-          <img src="assets/img/main_entrance.jpg" alt="The main entrance of Guwahati Biotech Park with the Indian flag flying" width="678" height="383" fetchpriority="high">
-          <figcaption><span class="dot" aria-hidden="true"></span> Technology Incubation Centre, Amingaon</figcaption>
-        </figure>
-        <figure class="hero-mini">
-          <img src="assets/img/instrument_lab.jpg" alt="Instruments on a laboratory bench at the park" width="799" height="369" loading="lazy">
-        </figure>
-        <div class="hero-badge" aria-hidden="true"><strong>21</strong><span>acre campus at Amingaon</span></div>
+      <div class="hero-visual" data-hero-tilt>
+        <div class="hero-deck">
+          <figure class="hero-frame">
+            <img src="assets/img/main_entrance.jpg" alt="The main entrance of Guwahati Biotech Park with the Indian flag flying" width="678" height="383" fetchpriority="high">
+            <span class="hero-frame-count">Amingaon · 01 / 03</span>
+            <figcaption><span class="dot" aria-hidden="true"></span> Technology Incubation Centre, Amingaon</figcaption>
+          </figure>
+          <figure class="hero-photo hero-photo--lab">
+            <img src="assets/img/biotech1.jpg" alt="A scientist working with a molecular model at Guwahati Biotech Park" width="790" height="410" loading="lazy">
+            <figcaption>Bio-science, in practice</figcaption>
+          </figure>
+          <figure class="hero-photo hero-photo--labs">
+            <img src="assets/img/instrument_lab.jpg" alt="Analytical instruments inside a laboratory at Guwahati Biotech Park" width="800" height="370" loading="lazy">
+            <figcaption>Labs, ready to use</figcaption>
+          </figure>
+          <div class="hero-badge" aria-hidden="true"><strong>21</strong><span>acre campus<br>at Amingaon</span></div>
+          <a class="hero-hub-card" href="achievements.html" aria-label="Open the campus photo hub">
+            <span class="hero-hub-icon">${icon('camera')}</span>
+            <span class="hero-hub-copy"><strong>Campus photo hub</strong><small>Labs · people · milestones</small></span>
+            <span class="hero-hub-count">${ACHIEVEMENTS.length}</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>`;

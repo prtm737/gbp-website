@@ -68,6 +68,131 @@ content:
         label: Feature on homepage
         type: boolean
 
+  - name: governance
+    label: Governance & key people
+    type: file
+    path: content/governance.json
+    format: json
+    fields:
+      - name: keyPeople
+        label: Key people
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: role
+            label: Role
+            type: string
+          - name: context
+            label: Body / committee
+            type: string
+          - name: image
+            label: Portrait
+            type: image
+          - name: initials
+            label: Initials
+            type: string
+            hint: Shown when no portrait is uploaded.
+      - name: council
+        label: Council of Management
+        type: object
+        list: true
+        fields:
+          - name: designation
+            label: Designation
+            type: string
+            required: true
+          - name: position
+            label: Position on the council
+            type: string
+
+  - name: labs
+    label: Specialised facilities
+    type: file
+    path: content/labs.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: URL anchor
+        type: string
+        required: true
+      - name: icon
+        label: Icon
+        type: select
+        options:
+          values: [microscope, leaf, sprout, flask, factory, cpu, layers, building]
+      - name: short
+        label: Short label
+        type: string
+      - name: title
+        label: Facility name
+        type: string
+        required: true
+      - name: text
+        label: Description
+        type: text
+        required: true
+      - name: points
+        label: Key points
+        type: string
+        list: true
+      - name: docs
+        label: Charge lists & forms
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Link label
+            type: string
+            required: true
+          - name: href
+            label: File URL
+            type: string
+            required: true
+
+  - name: instruments
+    label: Instruments & equipment
+    type: file
+    path: content/instruments.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Instrument
+        type: string
+        required: true
+      - name: make
+        label: Make / model
+        type: string
+
+  - name: publications
+    label: Publications
+    type: file
+    path: content/publications.json
+    format: json
+    list: true
+    fields:
+      - name: group
+        label: Group
+        type: select
+        options:
+          values: [E-newsletter, Policy, Magazine, Brochure, Success stories, Programmes]
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: href
+        label: File URL
+        type: string
+        required: true
+      - name: note
+        label: Note
+        type: string
+
   - name: sections
     label: Extra content sections
     type: file
@@ -199,7 +324,7 @@ content:
         label: Icon
         type: select
         options:
-          values: [microscope, honey, cpu, rocket, fish, users, book, globe, building]
+          values: [microscope, honey, cpu, rocket, fish, users, book, globe, building, sprout, leaf, flask, factory, layers]
       - name: title
         label: Name
         type: string

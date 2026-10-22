@@ -1,0 +1,49 @@
+{
+  "keyPeople": [
+    {
+      "name": "Dr. Himanta Biswa Sarma",
+      "role": "Hon’ble Chief Minister of Assam",
+      "context": "Governing Body, Guwahati Biotech Park Society",
+      "image": "assets/img/people/himanta.jpg",
+      "initials": "HBS"
+    },
+    {
+      "name": "Shri Keshab Mahanta",
+      "role": "Hon’ble Minister, Science & Technology",
+      "context": "Vice Chairman, Governing Body, Guwahati Biotech Park Society",
+      "image": "assets/img/people/keshab.jpg",
+      "initials": "KM"
+    },
+    {
+      "name": "Dr. Ravi Kota, IAS",
+      "role": "Chief Secretary, Government of Assam",
+      "context": "Chairman, Council of Management, Guwahati Biotech Park",
+      "image": "assets/img/people/ravi-kota.jpg",
+      "initials": "RK"
+    },
+    {
+      "name": "Prof. Goverdhan Mehta",
+      "role": "Former Director, Indian Institute of Science, Bengaluru",
+      "context": "Chairman, Technical Advisory Board, Guwahati Biotech Park Incubation Centre",
+      "image": "assets/img/people/govardhan-mehta.jpg",
+      "initials": "GM"
+    },
+    {
+      "name": "Director, IIT Guwahati",
+      "role": "Indian Institute of Technology Guwahati",
+      "context": "Chairman, Management Committee, Guwahati Biotech Park Incubation Centre",
+      "image": "",
+      "initials": "IITG"
+    }
+  ],
+  "council": [
+    { "designation": "Chief Secretary, Government of Assam", "position": "Chairperson" },
+    { "designation": "Commissioner & Secretary, Planning & Development Department", "position": "Member" },
+    { "designation": "Commissioner & Secretary, Finance Department", "position": "Member" },
+    { "designation": "Agriculture Production Commissioner", "position": "Member" },
+    { "designation": "Commissioner & Secretary, Science & Technology Department", "position": "Member" },
+    { "designation": "Director, IIT Guwahati, or nominee", "position": "Member" },
+    { "designation": "Two eminent experts in biotechnology", "position": "Member" },
+    { "designation": "Chief Executive Officer, Guwahati Biotech Park", "position": "Member Secretary" }
+  ]
+}

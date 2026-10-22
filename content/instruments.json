@@ -1,0 +1,362 @@
+[
+  {
+    "name": "LC MS/MS",
+    "make": "Agilent 6410 Triple Quad MS-MS"
+  },
+  {
+    "name": "GC MS",
+    "make": "PerkinElmer Clarus680 GC/600C MS"
+  },
+  {
+    "name": "CHNS Elemental Analyzer",
+    "make": "Eurovector EA3000"
+  },
+  {
+    "name": "Mass Directed auto-purification system",
+    "make": "Agilent 1200 Series"
+  },
+  {
+    "name": "UV Spectrophotometer",
+    "make": "Analytik Jena, Model: Specord 210 BU Plus"
+  },
+  {
+    "name": "IR Spectrophotometer",
+    "make": "Thermo Fisher Thermo Nicolet iS10"
+  },
+  {
+    "name": "Speed Vac (Vacuum Concentrator)",
+    "make": "Eppendorf Concentrator Plus"
+  },
+  {
+    "name": "Ultracentrifuge",
+    "make": "Beckman Coulter L100K"
+  },
+  {
+    "name": "Digital Polarimeter",
+    "make": "Rudolf AUTOPOL IV"
+  },
+  {
+    "name": "Digital pH Meter",
+    "make": "Mettler five easy TM PH Meter"
+  },
+  {
+    "name": "Sonicator",
+    "make": "Sonics VCX-500 Sonicator Vibra Cell Ultrasonic Processor"
+  },
+  {
+    "name": "High Precision Electronic Balance (5 Digit)",
+    "make": "Sartorius Semi-Micro Model:CPA225D (2 No.s)"
+  },
+  {
+    "name": "Millipore water filtration system",
+    "make": "Millipore Ultrapure water Purification system- Millipore Elix Avance"
+  },
+  {
+    "name": "Rotavapour (5L) with Pump & Chiller",
+    "make": "Buchi R-215V (Rotavapor); JeioTech-6106M (Chiller) (10 No.s)"
+  },
+  {
+    "name": "Rotavapour (20L) with Pump & Chiller",
+    "make": "Heidolph Lebrota 20(Rotavapor); Polyscience 6100M (ChillerX2)"
+  },
+  {
+    "name": "Magnetic Stirrer with Hot Plate",
+    "make": "IKA Magnetic stirrer with Hot plate, CMAG HS7 (7 No.s)"
+  },
+  {
+    "name": "Microcentrifuge (Non Refrigerated)",
+    "make": "Eppendorf Minispin Micro centrifuge"
+  },
+  {
+    "name": "Flourescence spectrophotometer",
+    "make": "Agilent (Varian) Cary Eclipse"
+  },
+  {
+    "name": "Microcentrifuge (Refrigerated)",
+    "make": "Eppendorf Model: 5424R"
+  },
+  {
+    "name": "High Speed Refrigerated Centrifuge",
+    "make": "Hermle High Speed Table Top Refrigerated Centrifuge Model: Z 326K (4 No.s)"
+  },
+  {
+    "name": "Continuos Flow Centrifuge",
+    "make": "Hitachi High Speed Continuous Flow Centrifuge Floor Model CR 22G III"
+  },
+  {
+    "name": "BOD Incubator",
+    "make": "Scigenics-ORBITEK BOD-350L"
+  },
+  {
+    "name": "CO2 Incubator",
+    "make": "Thermo Scientific Forma series-II Water jacketed CO2 Incubator"
+  },
+  {
+    "name": "Biosafety Cabinet",
+    "make": "Thermo Scientific 1300 series Class II Water Type A2 Biosafety cabinet"
+  },
+  {
+    "name": "Gel Dryer",
+    "make": "Hoefer GD2002 Vacuum Gel Dryer"
+  },
+  {
+    "name": "Horizontal Mini and Max Sub-Marine Electrophoresis Unit",
+    "make": "Hoefer HE33 mini submarine unit & HE 99X Max submarine unit"
+  },
+  {
+    "name": "Electroporator",
+    "make": "Eppendorf Eporator"
+  },
+  {
+    "name": "PCR",
+    "make": "Agilent SURECYCLER 8800"
+  },
+  {
+    "name": "Incubator/Environmental Shaker",
+    "make": "Scigenics -ORBITEK-LEBT"
+  },
+  {
+    "name": "Hybridization Oven/Shaker",
+    "make": "Scigenics -ORBITEK- HiBi-2D"
+  },
+  {
+    "name": "Autoclave (Vertical)",
+    "make": "MAC MSW-101(FAD)"
+  },
+  {
+    "name": "Vortex",
+    "make": "IKA Vortex Genius 3"
+  },
+  {
+    "name": "Slot-Blot Apparatus",
+    "make": "Bio-Rad Bio Dot SF"
+  },
+  {
+    "name": "Rotary High Vacuum Pump",
+    "make": "MAC, MSW-RVP 200 ECO"
+  },
+  {
+    "name": "Ice Flaking Machine",
+    "make": "Simag SPR-80 Ice Flaking Machine"
+  },
+  {
+    "name": "Deep Freezer (-40 o C)",
+    "make": "Haier Make/DW-40L508 (2 No.s)"
+  },
+  {
+    "name": "Deep Freezer (-86 o C)",
+    "make": "Haier Make/DW-86L728"
+  },
+  {
+    "name": "Stereo zoom Microscope",
+    "make": "Carl Zeiss/Discovery V 20 with motorized zoom"
+  },
+  {
+    "name": "Gel Documentation System",
+    "make": "Syngene/GBOX F3"
+  },
+  {
+    "name": "Hot Air Oven",
+    "make": "OVFU"
+  },
+  {
+    "name": "Water Bath Shaker",
+    "make": "OVFU"
+  },
+  {
+    "name": "HPTLC",
+    "make": "CAMAG /Camag Lino Mat5"
+  },
+  {
+    "name": "Lyophilizer",
+    "make": "LABCONCO/FreeZone Freeze Dry System (-50DC)"
+  },
+  {
+    "name": "HPLC ( Analytical) & HPLC (Preparative)",
+    "make": "Agilent/1260 Infinity (Anal) & Agilent/1260 Infinity (Prep)"
+  },
+  {
+    "name": "High Precession Electronic Balance (6 digit)",
+    "make": "A&D Company(Japan) /BM-22"
+  },
+  {
+    "name": "Heating Mantle (500mL, 1LX2, 2L)",
+    "make": "REICO"
+  },
+  {
+    "name": "Glass Distillation Unit",
+    "make": "Borosil/3361"
+  },
+  {
+    "name": "SS Water Bath (10L & 20 L)",
+    "make": "DAIHAN/WB-11&WB22"
+  },
+  {
+    "name": "Hot air oven with built in blower fan & digital control",
+    "make": "Thermo Scientific/Heratherm-51028153"
+  },
+  {
+    "name": "Hot air oven",
+    "make": "ACM-22066-I"
+  },
+  {
+    "name": "Horizontal Autoclave",
+    "make": "N-Biotek/NBSS210"
+  },
+  {
+    "name": "Confocal Microscope",
+    "make": "Leica/TCS SP8"
+  },
+  {
+    "name": "Fluorescence Microscope",
+    "make": "Carl Zeiss/AxioObserver Z1"
+  },
+  {
+    "name": "Ion Exchange & Fixed Gel Chromatography Unit",
+    "make": "GE Healthcare Bio-sciences/BPG columns200/500, 140/950, 140/500"
+  },
+  {
+    "name": "Pass box",
+    "make": "ELS Instrument/SS Passbox (Static)"
+  },
+  {
+    "name": "Microwave Oven",
+    "make": "Samsung/MC28H5023AK (2 No.s)"
+  },
+  {
+    "name": "Refrigerator 400L",
+    "make": "Samsung/RT45H5809SL/TL"
+  },
+  {
+    "name": "Ice Flaker",
+    "make": "Biobase/IME 100(FIM100)"
+  },
+  {
+    "name": "Shaker",
+    "make": "G-Bioscience/Benchtop Shaker-BT-GS-20"
+  },
+  {
+    "name": "Weighing Balance (Readability:1g, Capacity:6 kg)",
+    "make": "WENSAR/ECB-6000"
+  },
+  {
+    "name": "Electronic Balance (4 digit, Readability:0.1mg, Max.Capacity:220 g)",
+    "make": "Mettler Toledo/ME-204"
+  },
+  {
+    "name": "Mechanical Platform Balance 500 Kg",
+    "make": "Scale-Tech/CWS-500"
+  },
+  {
+    "name": "Digital Platform Balance 200 Kg",
+    "make": "Scale-Tech/CWS-200"
+  },
+  {
+    "name": "Stirrer Pilot Scale",
+    "make": "Heidolf/MR Hei-End"
+  },
+  {
+    "name": "BOD Incubator",
+    "make": "Bio-Technics/BTI-06"
+  },
+  {
+    "name": "Homogenizer with chiller",
+    "make": "GEA Mechanical Equipment/ High Pressure Homogenizer/PandaPLUS200"
+  },
+  {
+    "name": "Fermentor 5L",
+    "make": "Major Science/WINPACT FS-01-A05P-220 double Jacketed"
+  },
+  {
+    "name": "Refrigerator 400L",
+    "make": "Samsung, Model: RT47K6238UT/TL/2018"
+  },
+  {
+    "name": "Growth Chamber",
+    "make": "Alice Biotech/Growth Chamber with racks"
+  },
+  {
+    "name": "Vacuum Oven",
+    "make": "Life Science/LS-113/Priyo Scientific"
+  },
+  {
+    "name": "Hot Air Oven",
+    "make": "Vindish Instruments/Hot Air Oven"
+  },
+  {
+    "name": "Rotavapor 50L",
+    "make": "BUCHI/R-300/V-300"
+  },
+  {
+    "name": "Freeze Dryer",
+    "make": "Telstar Technologies/LYOQUEST -55 ECO BenchTop Freeze Dryer"
+  },
+  {
+    "name": "TFF System",
+    "make": "Merck Life Sciences/COGNET M1 TFF System"
+  },
+  {
+    "name": "Ultrafiltration system",
+    "make": "Merck Life Sciences/COGENT-MICRO TFF System"
+  },
+  {
+    "name": "Chromatography unit",
+    "make": "Millipore K Prime"
+  },
+  {
+    "name": "Pass Box",
+    "make": "ELS Instrument/SS Passbox (Static) (2 No.s)"
+  },
+  {
+    "name": "Refrigerator",
+    "make": "SAMSUNG/RT45H5809SL/TL"
+  },
+  {
+    "name": "Fermentor 40L",
+    "make": "BIO GEBE; BTI/40"
+  },
+  {
+    "name": "FPLC",
+    "make": "Biorad / NGC Quest Plus"
+  },
+  {
+    "name": "Chromatography Unit",
+    "make": "Merck Millipore/ K PRIME 40-II"
+  },
+  {
+    "name": "Ultrafiltration System",
+    "make": "Merck Millipore/ COGNET Micro"
+  },
+  {
+    "name": "Vertical Autoclave",
+    "make": "IKON/LS-103/Life Science"
+  },
+  {
+    "name": "Provision for Fumehoods, Ducting, Piping",
+    "make": "a) Bench Fume Hood and Walk-In Fume Hoods (Citizen);"
+  },
+  {
+    "name": "Provision for minimal furnishing",
+    "make": "Laboratory Workstations (Wall bench ;Island bench)"
+  },
+  {
+    "name": "Chiller for 20L rotavapor",
+    "make": "Polyscience 6100M"
+  },
+  {
+    "name": "Dehumidifier",
+    "make": "MAC"
+  },
+  {
+    "name": "pH meter (digital)",
+    "make": "Mettler five easy TM PH Meter (3 No.s)"
+  },
+  {
+    "name": "Rotavapour 5L with vacuum pump",
+    "make": "Heidolph-HEI-VAP Advantage/Hei-VAP Advantage HL"
+  },
+  {
+    "name": "Vacuum pump",
+    "make": "BUCHI/R-300V-300"
+  }
+]

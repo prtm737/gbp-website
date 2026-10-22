@@ -1,0 +1,186 @@
+[
+  {
+    "id": "caif",
+    "icon": "microscope",
+    "short": "CAIF",
+    "title": "Central Analytical Instrumentation Facility",
+    "text": "A shared analytical facility for sample analysis, method development and validation, with instrument-use services for academia and industry.",
+    "points": [
+      "LC-MS/MS, GC-MS, HPLC, HPTLC and spectroscopy",
+      "Method development and validation",
+      "Short- and long-term instrument use"
+    ],
+    "docs": [
+      {
+        "label": "Charge list",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2026/09/CAIF_charge_list_sept_2026.pdf"
+      },
+      {
+        "label": "Requisition form",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2026/09/CAIF_requisition_form_sept_2026.pdf"
+      }
+    ]
+  },
+  {
+    "id": "bioprospecting",
+    "icon": "leaf",
+    "short": "Bio-prospecting",
+    "title": "Bioprospecting Facility",
+    "text": "Screening and characterisation of biological resources from Northeast India for new products, compounds and bioactives.",
+    "points": [
+      "Bio-resource screening and extraction",
+      "Bioactivity and analytical support",
+      "Access for research and industry projects"
+    ],
+    "docs": [
+      {
+        "label": "Facility note",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/Bioprospecting-Facility-1.pdf"
+      },
+      {
+        "label": "Charge list",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2022/03/Bioprospecting-Facility-user-charge-_revised.pdf"
+      },
+      {
+        "label": "Requisition form",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/Requisition-form-for-instrument-services-22_4_2016-1.pdf"
+      }
+    ]
+  },
+  {
+    "id": "micropropagation",
+    "icon": "sprout",
+    "short": "Micropropagation",
+    "title": "Micropropagation Facility",
+    "text": "Plant tissue culture and micropropagation support for horticulture, forestry, floriculture and commercial crop programmes.",
+    "points": [
+      "Tissue culture and micropropagation",
+      "Plant molecular biology support",
+      "Protocol development for nurseries and growers"
+    ],
+    "docs": [
+      {
+        "label": "Facility note",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/Micropropagation-Facility-1.pdf"
+      },
+      {
+        "label": "Charge list",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/MP-user_charge-revised_4_7_2017.pdf"
+      },
+      {
+        "label": "Requisition form",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/Requisition-form-for-instrument-services-22_4_20161-1.pdf"
+      }
+    ]
+  },
+  {
+    "id": "herbal",
+    "icon": "flask",
+    "short": "Herbal extraction",
+    "title": "Herbal Extraction Facility",
+    "text": "Extraction, concentration and purification of herbal and natural products, from bench-scale trials to larger batches.",
+    "points": [
+      "Solvent extraction and concentration",
+      "Rotary evaporation and drying",
+      "Support for herbal and natural-product R&D"
+    ],
+    "docs": [
+      {
+        "label": "Facility note",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/Herbal-Extraction-Facility-1.pdf"
+      },
+      {
+        "label": "Charge list",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/Herbal-Extration-Facility-user_charge_revised_7_2_2019-1.pdf"
+      },
+      {
+        "label": "Requisition form",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/Requisition-form-for-instrument-services-22_4_20162-1.pdf"
+      }
+    ]
+  },
+  {
+    "id": "fermentation",
+    "icon": "factory",
+    "short": "Fermentation",
+    "title": "Fermentation Facility",
+    "text": "Fermentation and downstream support for bioprocess development, including bench and pilot-scale equipment.",
+    "points": [
+      "5 L and 40 L fermenters",
+      "Pilot-scale stirred systems",
+      "Downstream and recovery support"
+    ],
+    "docs": [
+      {
+        "label": "Facility note",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/Fermentation-Facility-1.pdf"
+      },
+      {
+        "label": "Charge list",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/Fermentation-Facility-user-charge-list-revised-7_2_2019.pdf"
+      },
+      {
+        "label": "Requisition form",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/Requisition-form-for-instrument-services-22_4_20163.pdf"
+      }
+    ]
+  },
+  {
+    "id": "utilities",
+    "icon": "cpu",
+    "short": "Utilities",
+    "title": "Utilities & general equipment",
+    "text": "Shared utilities and general equipment that keep laboratory work running, available on a charge basis.",
+    "points": [
+      "Water, gas and vacuum services",
+      "Cold storage and ice flaking",
+      "General laboratory equipment access"
+    ],
+    "docs": [
+      {
+        "label": "Charge list",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2024/05/user_charges_general_equipments-updtd.pdf"
+      },
+      {
+        "label": "Requisition form",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2021/02/REQUISITION-FORM-FOR-GENERAL-EQUIPMENT7_10_2020-1.pdf"
+      }
+    ]
+  },
+  {
+    "id": "greenhouse",
+    "icon": "leaf",
+    "short": "Greenhouse",
+    "title": "Greenhouse",
+    "text": "Controlled-environment growing space for plant research, tissue-culture acclimatisation and crop trials.",
+    "points": [
+      "Controlled growing environment",
+      "Plant acclimatisation and trials",
+      "Support for tissue-culture programmes"
+    ],
+    "docs": [
+      {
+        "label": "Specifications",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2023/10/specifications_greenhouse.pdf"
+      }
+    ]
+  },
+  {
+    "id": "cold-room",
+    "icon": "layers",
+    "short": "Cold room",
+    "title": "Cold Room",
+    "text": "Temperature-controlled storage for samples, cultures and materials that need a stable cold chain.",
+    "points": [
+      "Controlled low-temperature storage",
+      "Sample and culture preservation",
+      "Shared access on request"
+    ],
+    "docs": [
+      {
+        "label": "Specifications",
+        "href": "https://www.guwahatibiotechpark.com/wp-content/uploads/2023/10/sprcifications_coldroom.pdf"
+      }
+    ]
+  }
+]
