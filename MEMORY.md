@@ -80,6 +80,16 @@ JSON-LD before finishing. Generated root `*.html`, `sitemap.xml`, `robots.txt` a
 
 ## Update log
 
+### 2026-10-22 17:56 IST — Netlify deploy source corrected
+- Root cause of the stale live hero: Netlify’s site (`guwahatibiotechpark`)
+  is linked to `github.com/prtm737/guwahatibiotechpark`, not `gbp-website`.
+  The earlier pushes updated the wrong repository.
+- Added remote `live` pointing at the Netlify-linked repo and pushed `52057f2`.
+- Verified live: `hero-deck` present, 8 lab cards, instrument table,
+  6 publication columns, governance grid, and mirrored CAIF PDF all return 200.
+- From now on push to **both** `origin` (`gbp-website`) and `live`
+  (`guwahatibiotechpark`), or make `live` the primary remote.
+
 ### 2026-10-22 15:20 IST — Content migration and premium hero
 - Scraped `guwahatibiotechpark.com` pages and rebuilt the remaining content:
   governance/key people, eight specialised facilities with charge lists and
