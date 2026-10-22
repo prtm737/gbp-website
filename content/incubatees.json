@@ -1,0 +1,108 @@
+[
+  {
+    "name": "Primogen Biotech",
+    "legal": "Primogen Biotech Pvt. Ltd.",
+    "sector": "Genomics",
+    "desc": "Genomics and proteomics services, plus work on an affordable kit for rapid DNA, RNA and protein isolation from a single leaf sample.",
+    "url": "",
+    "note": "Website currently unavailable",
+    "logo": "assets/img/primogen_updtd.png"
+  },
+  {
+    "name": "Zeroharm Sciences",
+    "legal": "Zeroharm Sciences",
+    "sector": "Wellness",
+    "desc": "A plant-based supplement brand building efficacious, everyday solutions for lasting health and wellness.",
+    "url": "https://www.zeroharm.in",
+    "logo": "assets/img/ZEROHARM.jpg"
+  },
+  {
+    "name": "AGT Biosciences",
+    "legal": "AGT Biosciences",
+    "sector": "Bioservices",
+    "desc": "Research and analytical solutions, plus training for academia and industry in biosciences and bioinformatics.",
+    "url": "",
+    "note": "Website currently unavailable",
+    "logo": "assets/img/agt_bioscience.png"
+  },
+  {
+    "name": "Zymolent Biosciences",
+    "legal": "Zymolent Biosciences",
+    "sector": "Enzyme tech",
+    "desc": "Enzyme technology, agricultural bioformulations and microbial biotechnology, including reusable enzymes for second-generation ethanol.",
+    "url": "https://zymolent.com/",
+    "logo": "assets/img/zymolent.png"
+  },
+  {
+    "name": "Dream Hives",
+    "legal": "Dream Hives",
+    "sector": "Food & beverage",
+    "desc": "Fermented honey mead — the world’s oldest alcoholic beverage, reimagined for experiential drinking in Assam.",
+    "url": "https://www.linkedin.com/in/kaustoov/",
+    "logo": "assets/img/dreamhives.png"
+  },
+  {
+    "name": "Innotech Interventions",
+    "legal": "Innotech Interventions Pvt. Ltd.",
+    "sector": "Environment",
+    "desc": "Bioremediation of crude oil and oily sludge, produced-water treatment and eco-restoration of contaminated soil and water.",
+    "url": "",
+    "logo": "assets/img/INNOTECH.png"
+  },
+  {
+    "name": "NIPER Guwahati",
+    "legal": "NIPER Guwahati",
+    "sector": "Phytopharmaceuticals",
+    "desc": "Development of phytopharmaceuticals from medicinal plants of Northeast India for cancer and inflammatory disease management.",
+    "url": "https://niperguwahati.ac.in/",
+    "logo": "assets/img/niper.png"
+  },
+  {
+    "name": "Dr. Dipankar Laboratories",
+    "legal": "Dr. Dipankar Laboratories Pvt. Ltd.",
+    "sector": "Food & beverage",
+    "desc": "A rice-wine venture working to extend the shelf life of a heritage beverage from a few days to more than three years.",
+    "url": "https://www.linkedin.com/in/dipankar-kalita/",
+    "logo": "assets/img/dr-dipankar.png"
+  },
+  {
+    "name": "Sivantha Biotech",
+    "legal": "Sivantha Biotech Pvt. Ltd.",
+    "sector": "Therapeutics",
+    "desc": "An R&D centre exploring alternative medicines for cancer and sleep disorders.",
+    "url": "",
+    "logo": "assets/img/shivantaa.png"
+  },
+  {
+    "name": "Medinovation",
+    "legal": "Medinovation Research and Consultancy Pvt. Ltd.",
+    "sector": "MedTech",
+    "desc": "Research-driven products that solve everyday problems for clinicians, laboratories and hospitals — ethical, reliable and affordable.",
+    "url": "",
+    "logo": ""
+  },
+  {
+    "name": "NECTAR",
+    "legal": "North East Centre for Technology Application and Reach",
+    "sector": "Technology",
+    "desc": "An autonomous DST body working to extend technology applications for public and social good across the North East.",
+    "url": "",
+    "logo": "assets/img/NECTAR.jpg"
+  },
+  {
+    "name": "Dept. of Excise, Goa",
+    "legal": "Department of Excise, Government of Goa",
+    "sector": "Analytical",
+    "desc": "The chemical examiner’s laboratory of the Goa Excise Department operates from the Guwahati Biotech Park campus.",
+    "url": "",
+    "logo": ""
+  },
+  {
+    "name": "Eliea Wellness",
+    "legal": "Eliea Wellness Pvt. Ltd.",
+    "sector": "Personal care",
+    "desc": "Natural-ingredient products for skin and hair disorders with therapeutic attributes.",
+    "url": "https://www.elieawellness.com/",
+    "logo": "assets/img/eliea.jpg"
+  }
+]

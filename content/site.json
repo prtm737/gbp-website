@@ -1,0 +1,20 @@
+{
+  "name": "Guwahati Biotech Park",
+  "short": "GBP",
+  "tagline": "Where bio-science becomes business.",
+  "email": "info2gbp@guwahatibiotechpark.com",
+  "ceoEmail": "ceogbp@guwahatibiotechpark.com",
+  "rhtlEmail": "regionalhoneylab.gbp@gmail.com",
+  "phone": "+91 90850 60009",
+  "address": "Technology Incubation Centre, Near S.P. Office, Amingaon, Kamrup, Guwahati, Assam 781031",
+  "map": "https://maps.google.com/maps?q=Guwahati%20Biotech%20Park%20Amingaon&t=&z=14&ie=UTF8&iwloc=&output=embed",
+  "mapLink": "https://www.google.com/maps/search/?api=1&query=Guwahati+Biotech+Park+Amingaon",
+  "facebook": "https://www.facebook.com/guwahatibiotechpark",
+  "instagram": "https://www.instagram.com/gbp_assam/",
+  "twitter": "https://twitter.com/GBP_assam",
+  "url": "https://www.guwahatibiotechpark.com",
+  "source": "https://www.guwahatibiotechpark.com",
+  "logo": "assets/img/logo.png",
+  "ogImage": "assets/img/generated/og-default.jpg",
+  "locale": "en_IN"
+}

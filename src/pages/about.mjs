@@ -146,7 +146,7 @@ function people() {
       </div>
       <div class="council-note">
         <p>The Council of Management includes representatives of the Government of Assam, the Department of Biotechnology and partner institutions.</p>
-        <a class="text-link" href="${SITE.source}/council-of-management/" target="_blank" rel="noopener">Council of Management and key persons ${icon('external')}</a>
+        <a class="text-link" href="about.html#people">Council of Management and key persons ${icon('arrow')}</a>
       </div>
     </div>
   </section>`;
@@ -192,5 +192,14 @@ export function aboutPage() {
     text: 'Join a campus of founders, scientists and institutions working on the region’s most useful biological problems.',
     primary: { label: 'Apply for incubation', href: 'incubation.html#apply' },
     secondary: { label: 'Explore facilities', href: 'facilities.html' }
-  })}`;
+  })}
+  <script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a }
+    }))
+  }).replace(/</g, '\\u003c')}</script>`;
 }

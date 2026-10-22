@@ -1,0 +1,170 @@
+[
+  {
+    "kind": "Page",
+    "title": "Home",
+    "desc": "Guwahati Biotech Park — the first biotech park in Northeast India.",
+    "href": "index.html",
+    "keywords": "home guwahati biotech park amingaon assam incubation"
+  },
+  {
+    "kind": "Page",
+    "title": "About the park",
+    "desc": "Story, vision, mission, leadership and frequently asked questions.",
+    "href": "about.html",
+    "keywords": "about overview story vision mission why gbp leadership people faq"
+  },
+  {
+    "kind": "Section",
+    "title": "Vision and mission",
+    "desc": "Explore the region’s bio-resource potential and connect industry, research and academia.",
+    "href": "about.html#vision",
+    "keywords": "vision mission bio-resource innovation entrepreneurship"
+  },
+  {
+    "kind": "Section",
+    "title": "Leadership and people",
+    "desc": "CEO, Administrator and the council that guides the park.",
+    "href": "about.html#people",
+    "keywords": "ceo administrator leadership council management staff people"
+  },
+  {
+    "kind": "Page",
+    "title": "Facilities",
+    "desc": "Labs, analytical instrumentation, bioinformatics, prototyping and honey testing.",
+    "href": "facilities.html",
+    "keywords": "facilities labs laboratory equipment infrastructure campus"
+  },
+  {
+    "kind": "Facility",
+    "title": "Technology Incubation Centre",
+    "desc": "Ready-to-use modular wet labs from 300 to 1,900 sq ft.",
+    "href": "facilities.html#tic",
+    "keywords": "tic technology incubation centre modular wet lab lease office"
+  },
+  {
+    "kind": "Facility",
+    "title": "Regional Honey Testing Laboratory",
+    "desc": "Honey quality, authenticity and safety testing supported by the National Bee Board.",
+    "href": "facilities.html#rhtl",
+    "keywords": "rhtl honey testing lab adulteration fssai beekeeping nbb nbhm"
+  },
+  {
+    "kind": "Facility",
+    "title": "Bioinformatics Facility",
+    "desc": "Computing, data analysis and training for genomics and proteomics.",
+    "href": "facilities.html#bif",
+    "keywords": "bioinformatics bif computing genomics proteomics data"
+  },
+  {
+    "kind": "Facility",
+    "title": "NIDHI PRAYAS",
+    "desc": "Pre-incubation and prototyping support for innovators.",
+    "href": "facilities.html#nidhi",
+    "keywords": "nidhi prayas prototype fab lab pre-incubation innovation"
+  },
+  {
+    "kind": "Facility",
+    "title": "BICFA — Fisheries & Aquaculture",
+    "desc": "Business incubation for fisheries, aquaculture and value addition.",
+    "href": "facilities.html#bicfa",
+    "keywords": "bicfa fisheries aquaculture biofloc ornamental fish pmmsy"
+  },
+  {
+    "kind": "Facility",
+    "title": "Training and exposure visits",
+    "desc": "Hands-on programmes, internships, dissertations and campus visits.",
+    "href": "facilities.html#training",
+    "keywords": "training internship dissertation exposure visit students workshop"
+  },
+  {
+    "kind": "Page",
+    "title": "Incubation",
+    "desc": "Who the incubation centre is for, what you get, and how to apply.",
+    "href": "incubation.html",
+    "keywords": "incubation apply application incubatee startup founder proposal lease"
+  },
+  {
+    "kind": "Section",
+    "title": "How to apply for incubation",
+    "desc": "Five steps from research proposal to moving into your lab.",
+    "href": "incubation.html#apply",
+    "keywords": "how to apply application format rfp proposal annexure lease"
+  },
+  {
+    "kind": "Section",
+    "title": "Incubatees",
+    "desc": "Thirteen resident companies and institutions, from genomics to mead.",
+    "href": "incubation.html#incubatees",
+    "keywords": "incubatees companies primogen zeroharm agt zymolent dream hives innotech niper sivantha medinovation nectar eliea excise"
+  },
+  {
+    "kind": "Page",
+    "title": "Achievements and activities",
+    "desc": "Photos and videos of training, outreach, innovation and campus milestones.",
+    "href": "achievements.html",
+    "keywords": "achievements activities gallery photos videos events milestones outreach training"
+  },
+  {
+    "kind": "Section",
+    "title": "Activity gallery",
+    "desc": "Browse photos and videos from Guwahati Biotech Park.",
+    "href": "achievements.html#gallery",
+    "keywords": "gallery photos videos media activities campus"
+  },
+  {
+    "kind": "Page",
+    "title": "News & tenders",
+    "desc": "Tenders, training programmes, careers, events and park news.",
+    "href": "news.html",
+    "keywords": "news events tenders quotations careers jobs training notices"
+  },
+  {
+    "kind": "Section",
+    "title": "Tenders and quotations",
+    "desc": "Current and recent procurement notices from the park.",
+    "href": "news.html#updates",
+    "keywords": "tender quotation nit niq procurement contract supply"
+  },
+  {
+    "kind": "Section",
+    "title": "Training programmes",
+    "desc": "Skill development, workshops and hands-on laboratory training.",
+    "href": "news.html#updates",
+    "keywords": "training workshop skill development aquaculture mushroom tissue culture"
+  },
+  {
+    "kind": "Section",
+    "title": "Careers",
+    "desc": "Employment notices and recruitment results.",
+    "href": "news.html#updates",
+    "keywords": "careers jobs recruitment employment vacancy junior engineer"
+  },
+  {
+    "kind": "Page",
+    "title": "Contact",
+    "desc": "Address, team directory, enquiry form and directions.",
+    "href": "contact.html",
+    "keywords": "contact address email phone map amingaon team directory"
+  },
+  {
+    "kind": "Section",
+    "title": "Team directory",
+    "desc": "Administration, finance, operations and scientific contacts.",
+    "href": "contact.html#team",
+    "keywords": "staff directory administration finance scientific phone email"
+  },
+  {
+    "kind": "Section",
+    "title": "Visit the park",
+    "desc": "Find the campus at Amingaon, near the S.P. Office.",
+    "href": "contact.html#visit",
+    "keywords": "visit location map directions amingaon guwahati how to reach"
+  },
+  {
+    "kind": "Download",
+    "title": "Incubation application downloads",
+    "desc": "Application format, applicant information, annexures and floor plan.",
+    "href": "incubation.html#downloads",
+    "keywords": "download pdf application format annexure floor plan requisition"
+  }
+]

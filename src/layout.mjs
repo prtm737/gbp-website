@@ -1,5 +1,26 @@
 import { icon } from './icons.mjs';
-import { SITE, NAV, SEARCH_INDEX } from './data.mjs';
+import { SITE, NAV, SEARCH_INDEX, ACHIEVEMENTS, SECTIONS } from './data.mjs';
+
+const abs = (path) => `${SITE.url.replace(/\/$/, '')}/${String(path).replace(/^\//, '')}`;
+const canonicalFor = (page) => (page === 'home' ? `${SITE.url.replace(/\/$/, '')}/` : abs(`${page}.html`));
+
+const searchIndex = [
+  ...SEARCH_INDEX,
+  ...ACHIEVEMENTS.map((item) => ({
+    kind: 'Achievement',
+    title: item.title,
+    desc: item.summary,
+    href: `achievements.html#${item.id}`,
+    keywords: `${item.category} ${item.location || ''} achievement activity gallery photo video`
+  })),
+  ...SECTIONS.filter((section) => section.enabled).map((section) => ({
+    kind: 'Section',
+    title: section.title,
+    desc: section.body || '',
+    href: `${section.placement === 'home' ? 'index.html' : `${section.placement}.html`}#${section.id}`,
+    keywords: `${section.eyebrow || ''} ${section.placement} section`
+  }))
+];
 
 const socials = [
   { name: 'Facebook', href: SITE.facebook, icon: 'facebook' },
@@ -16,27 +37,68 @@ function socialLinks(cls = '') {
     .join('');
 }
 
-function head({ title, description, page }) {
+function head({ title, description, page, ogImage, keywords, noindex = false }) {
   const fullTitle = page === 'home' ? `${SITE.name} — ${SITE.tagline}` : `${title} · ${SITE.name}`;
+  const pageUrl = canonicalFor(page);
+  const image = abs(ogImage || SITE.ogImage || 'assets/img/generated/og-default.jpg');
   const ld = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: SITE.name,
-    alternateName: 'GBP',
-    url: SITE.source,
-    logo: `${SITE.source}/wp-content/uploads/2021/02/logo.png`,
-    description:
-      'The first biotech park in Northeast India — a joint initiative of the Government of Assam and the Department of Biotechnology, Government of India.',
-    email: SITE.email,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Technology Incubation Centre, Near S.P. Office, Amingaon',
-      addressLocality: 'Guwahati',
-      addressRegion: 'Assam',
-      postalCode: '781031',
-      addressCountry: 'IN'
-    },
-    sameAs: [SITE.facebook, SITE.instagram, SITE.twitter]
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': `${abs('')}#organization`,
+        name: SITE.name,
+        alternateName: 'GBP',
+        url: SITE.url,
+        logo: abs(SITE.logo || 'assets/img/logo.png'),
+        image: image,
+        description:
+          'The first biotech park in Northeast India — a joint initiative of the Government of Assam and the Department of Biotechnology, Government of India.',
+        email: SITE.email,
+        telephone: SITE.phone.replace(/\s/g, ''),
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Technology Incubation Centre, Near S.P. Office, Amingaon',
+          addressLocality: 'Guwahati',
+          addressRegion: 'Assam',
+          postalCode: '781031',
+          addressCountry: 'IN'
+        },
+        areaServed: 'Northeast India',
+        sameAs: [SITE.facebook, SITE.instagram, SITE.twitter]
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: fullTitle,
+        description,
+        isPartOf: { '@id': `${abs('')}#website` },
+        about: { '@id': `${abs('')}#organization` },
+        inLanguage: 'en-IN',
+        primaryImageOfPage: { '@type': 'ImageObject', url: image }
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${abs('')}#website`,
+        url: abs(''),
+        name: SITE.name,
+        publisher: { '@id': `${abs('')}#organization` },
+        inLanguage: 'en-IN'
+      },
+      ...(page === 'home'
+        ? []
+        : [
+            {
+              '@type': 'BreadcrumbList',
+              '@id': `${pageUrl}#breadcrumb`,
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: abs('') },
+                { '@type': 'ListItem', position: 2, name: title, item: pageUrl }
+              ]
+            }
+          ])
+    ]
   };
 
   return `<!DOCTYPE html>
@@ -46,13 +108,29 @@ function head({ title, description, page }) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${fullTitle}</title>
   <meta name="description" content="${description}">
+  ${keywords ? `<meta name="keywords" content="${keywords}">` : ''}
+  <meta name="author" content="${SITE.name}">
+  <meta name="robots" content="${noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}">
   <meta name="theme-color" content="#0c3d2c">
-  <meta property="og:type" content="website">
+  <meta name="geo.region" content="IN-AS">
+  <meta name="geo.placename" content="Amingaon, Guwahati">
+  <link rel="canonical" href="${pageUrl}">
+  <link rel="alternate" hreflang="en-in" href="${pageUrl}">
+  <meta property="og:type" content="${page === 'home' ? 'website' : 'article'}">
+  <meta property="og:locale" content="${SITE.locale || 'en_IN'}">
+  <meta property="og:site_name" content="${SITE.name}">
   <meta property="og:title" content="${fullTitle}">
   <meta property="og:description" content="${description}">
-  <meta property="og:image" content="${SITE.source}/wp-content/uploads/2023/07/main_entrance.jpg">
+  <meta property="og:url" content="${pageUrl}">
+  <meta property="og:image" content="${image}">
+  <meta property="og:image:alt" content="${title} — ${SITE.name}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GBP_assam">
+  <meta name="twitter:title" content="${fullTitle}">
+  <meta name="twitter:description" content="${description}">
+  <meta name="twitter:image" content="${image}">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/generated/logo-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -69,7 +147,7 @@ function head({ title, description, page }) {
       }
     })();
   </script>
-  <script type="application/ld+json">${JSON.stringify(ld)}</script>
+  <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script>
 </head>
 <body data-page="${page}">
   <a class="skip-link" href="#main">Skip to content</a>`;
@@ -83,7 +161,7 @@ function topbar() {
         <a class="topbar-mail" href="mailto:${SITE.email}">${icon('mail')}<span>${SITE.email}</span></a>
         <span class="topbar-divider" aria-hidden="true"></span>
         <div class="topbar-socials">${socialLinks()}</div>
-        <a class="topbar-source" href="${SITE.source}" target="_blank" rel="noopener">Official site ${icon('external')}</a>
+        <a class="topbar-source" href="news.html#updates">Tenders &amp; notices ${icon('arrow')}</a>
       </div>
     </div>
   </div>`;
@@ -216,6 +294,7 @@ function footer() {
           <li><a href="about.html#vision">Vision &amp; mission</a></li>
           <li><a href="about.html#people">People</a></li>
           <li><a href="about.html#faq">FAQs</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -250,7 +329,7 @@ function footer() {
     <div class="wrap footer-word" aria-hidden="true"><span>Guwahati</span> <span>Biotech Park</span></div>
     <div class="wrap footer-bottom">
       <p>© <span data-year>2026</span> Guwahati Biotech Park. All rights reserved.</p>
-      <p class="footer-note">Independent redesign concept. Content, images and marks belong to Guwahati Biotech Park. <a href="${SITE.source}" target="_blank" rel="noopener">View the official site</a>.</p>
+      <p class="footer-note">A joint initiative of the Government of Assam and the Department of Biotechnology, Government of India.</p>
       <a class="to-top" href="#main">Back to top ${icon('arrowUp')}</a>
     </div>
   </footer>`;
@@ -272,11 +351,20 @@ function overlays() {
     </div>
   </dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script type="application/json" id="search-index">${JSON.stringify(SEARCH_INDEX).replace(/</g, '\\u003c')}</script>`;
+  <script type="application/json" id="search-index">${JSON.stringify(searchIndex).replace(/</g, '\\u003c')}</script>`;
 }
 
-export function page({ title, description, page: pageKey, body, ticker: showTicker = false }) {
-  return `${head({ title, description, page: pageKey })}
+export function page({
+  title,
+  description,
+  page: pageKey,
+  body,
+  ticker: showTicker = false,
+  ogImage,
+  keywords,
+  noindex = false
+}) {
+  return `${head({ title, description, page: pageKey, ogImage, keywords, noindex })}
   ${header(pageKey)}
   ${showTicker ? ticker() : ''}
   <main id="main">

@@ -1,0 +1,37 @@
+{
+  "home": {
+    "title": "Home",
+    "description": "Guwahati Biotech Park is the first biotech park in Northeast India — ready-to-use labs, scientific facilities and incubation for bio-science ventures at Amingaon, Guwahati.",
+    "ogImage": "assets/img/generated/og-default.jpg"
+  },
+  "about": {
+    "title": "About",
+    "description": "The story, vision, mission, leadership and research ecosystem of Guwahati Biotech Park, a joint initiative of the Government of Assam and DBT, Government of India, at Amingaon, Guwahati.",
+    "ogImage": "assets/img/generated/og-default.jpg"
+  },
+  "facilities": {
+    "title": "Facilities",
+    "description": "Explore the Technology Incubation Centre, Regional Honey Testing Laboratory, Bioinformatics Facility, NIDHI PRAYAS, BICFA and training facilities at Guwahati Biotech Park, Amingaon.",
+    "ogImage": "assets/img/GBP62-1-scaled.jpg"
+  },
+  "incubation": {
+    "title": "Incubation",
+    "description": "Apply for incubation at Guwahati Biotech Park. Ready-to-use modular labs, flexible leases, scientific support and business guidance for bio-ventures in Northeast India.",
+    "ogImage": "assets/img/generated/og-default.jpg"
+  },
+  "achievements": {
+    "title": "Achievements & Activities",
+    "description": "Photos and videos from Guwahati Biotech Park — training programmes, laboratory development, outreach, innovation and incubatee milestones at the Amingaon campus.",
+    "ogImage": "assets/img/generated/achievement-outreach.jpg"
+  },
+  "news": {
+    "title": "News & Tenders",
+    "description": "Tenders, quotations, training programmes, careers, events and news from Guwahati Biotech Park, with links to the official notices.",
+    "ogImage": "assets/img/generated/og-default.jpg"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Contact Guwahati Biotech Park at Amingaon, Guwahati. Find the administration, scientific team, honey testing laboratory and directions to the campus.",
+    "ogImage": "assets/img/generated/og-default.jpg"
+  }
+}

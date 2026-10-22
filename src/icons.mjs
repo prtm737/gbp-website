@@ -40,7 +40,10 @@ const ICONS = {
   x: '<path d="M4 4l16 16M20 4 4 20"/>',
   chevron: '<path d="m8 10 4 4 4-4"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
-  minus: '<path d="M5 12h14"/>'
+  minus: '<path d="M5 12h14"/>',
+  play: '<path d="M8 5.5v13l11-6.5-11-6.5Z"/>',
+  camera: '<path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.5"/>',
+  video: '<rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/>'
 };
 
 export function icon(name, cls = '') {

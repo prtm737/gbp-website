@@ -1,0 +1,12 @@
+{
+  "name": "gbp-website",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Guwahati Biotech Park — static site with Pages CMS content editing",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "images": "python3 scripts/generate-images.py",
+    "preview": "python3 -m http.server 4173 -d dist"
+  }
+}

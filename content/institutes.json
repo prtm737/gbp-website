@@ -1,0 +1,26 @@
+{
+  "institutes": [
+    "Indian Institute of Technology, Guwahati",
+    "North-East Institute of Science & Technology, Jorhat",
+    "Institute of Advanced Studies in Science & Technology, Guwahati"
+  ],
+  "centres": [
+    "Rainforest Research Institute, Jorhat",
+    "Regional Medical Research Centre (ICMR), Dibrugarh",
+    "Tocklai Tea Research Institute, Jorhat",
+    "Defence Research Laboratory, Tezpur",
+    "Centre for Petroleum Technology, Tezpur University",
+    "Ramie Research Station, Sorbhog",
+    "Regional Horticultural Research Station, Guwahati",
+    "Central Silk and Muga Research Station, Jorhat",
+    "Regional Agricultural Research Station, Nagaon"
+  ],
+  "universities": [
+    "Gauhati University, Guwahati",
+    "Assam Agricultural University, Jorhat",
+    "Tezpur University, Tezpur",
+    "Dibrugarh University, Dibrugarh",
+    "Assam University, Silchar",
+    "North Eastern Hill University, Shillong"
+  ]
+}

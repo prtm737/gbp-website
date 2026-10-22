@@ -35,9 +35,9 @@ function noticePanel() {
       </div>
     </div>
     <div class="notice-links">
-      <a class="btn btn-ghost" href="${SITE.source}/tenders/" target="_blank" rel="noopener">Tenders ${icon('external')}</a>
-      <a class="btn btn-ghost" href="${SITE.source}/careers/" target="_blank" rel="noopener">Careers ${icon('external')}</a>
-      <a class="btn btn-ghost" href="${SITE.source}/publication/" target="_blank" rel="noopener">Publications ${icon('external')}</a>
+      <a class="btn btn-ghost" href="news.html#updates">Tenders ${icon('arrow')}</a>
+      <a class="btn btn-ghost" href="news.html#updates">Careers ${icon('arrow')}</a>
+      <a class="btn btn-ghost" href="news.html#updates">Publications ${icon('arrow')}</a>
     </div>
   </aside>`;
 }
@@ -58,7 +58,7 @@ export function newsPage() {
         ${NEWS.map((n) => newsItem(n, { searchable: true })).join('')}
       </div>
       <p class="filter-empty" data-empty hidden>No updates match your search. Try a different category or keyword.</p>
-      <p class="small-note news-foot-note">This page is an independent redesign and is not the official notice board. Use the links above to verify the latest information at the source.</p>
+      <p class="small-note news-foot-note">Always confirm deadlines and current openings with the administration. Procurement and recruitment notices are published in the public interest.</p>
     </div>
   </section>
   ${ctaBand({

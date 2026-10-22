@@ -1,5 +1,5 @@
 import { icon } from '../icons.mjs';
-import { SECTORS, INCUBATEES, NEWS, SITE } from '../data.mjs';
+import { SECTORS, INCUBATEES, NEWS, ACHIEVEMENTS, SITE } from '../data.mjs';
 import { sectionHead, newsItem, ctaBand } from '../components.mjs';
 
 const featuredNews = NEWS.slice(0, 8);
@@ -157,7 +157,7 @@ function stats() {
   return `<section class="stats-band">
     <div class="wrap">
       <dl class="stats">
-        <div class="reveal"><dt>21</dt><dd>acres on the north bank of the Brahmaputra</dd></div>
+        <div class="reveal"><dt>21</dt><dd>acres at Amingaon, Guwahati</dd></div>
         <div class="reveal"><dt>300–1,900</dt><dd>sq ft modular laboratory spaces</dd></div>
         <div class="reveal"><dt>13</dt><dd>resident incubatees and institutions</dd></div>
         <div class="reveal"><dt>9</dt><dd>focus sectors, from health to fisheries</dd></div>
@@ -191,6 +191,52 @@ function incubatees() {
   </section>`;
 }
 
+function achievementsPreview() {
+  const featured = ACHIEVEMENTS.filter((a) => a.featured).slice(0, 3);
+  if (!featured.length) return '';
+  const esc = (value) =>
+    String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  const CATEGORY_LABELS = {
+    facility: 'Facilities',
+    outreach: 'Outreach',
+    training: 'Training',
+    innovation: 'Innovation',
+    community: 'Community'
+  };
+  return `<section class="section section-tint" id="achievements">
+    <div class="wrap">
+      ${sectionHead({
+        eyebrow: 'Achievements & activities',
+        title: 'The work, in pictures.',
+        note: 'Training cohorts, laboratory development, outreach drives and incubatee milestones — a look at what happens on campus.',
+        link: { label: 'See the gallery', href: 'achievements.html' }
+      })}
+      <div class="achievement-preview">
+        ${featured
+          .map(
+            (a) => `<article class="achievement-card reveal">
+              <a class="achievement-media" href="achievements.html#${esc(a.id)}">
+                <img src="${a.image}" alt="${esc(a.title)}" width="800" height="500" loading="lazy" decoding="async">
+                <span class="achievement-shade" aria-hidden="true"></span>
+                <span class="achievement-tag">${CATEGORY_LABELS[a.category] || a.category}</span>
+                <span class="achievement-kind">${a.videoUrl ? `${icon('play')} Video` : `${icon('camera')} Photo`}</span>
+              </a>
+              <div class="achievement-body">
+                <h3><a href="achievements.html#${esc(a.id)}">${esc(a.title)}</a></h3>
+                <p>${esc(a.summary)}</p>
+              </div>
+            </article>`
+          )
+          .join('')}
+      </div>
+    </div>
+  </section>`;
+}
+
 function news() {
   return `<section class="section" id="updates">
     <div class="wrap">
@@ -220,7 +266,7 @@ function visit() {
     <div class="wrap visit-grid">
       <div class="visit-copy">
         <p class="eyebrow">Find us</p>
-        <h2 class="display">On the north bank, close to the people doing the work.</h2>
+        <h2 class="display">At Amingaon, close to the people doing the work.</h2>
         <p class="section-note">The campus sits at Amingaon, across the Brahmaputra from central Guwahati and within reach of IIT Guwahati, Gauhati University and the Brahmaputra Industrial Park.</p>
         <address class="visit-address">${icon('pin')}<span>Technology Incubation Centre<br>Near S.P. Office, Amingaon<br>Kamrup, Guwahati, Assam 781031</span></address>
         <div class="visit-contacts">
@@ -270,7 +316,7 @@ function hero() {
         <figure class="hero-mini">
           <img src="assets/img/instrument_lab.jpg" alt="Instruments on a laboratory bench at the park" width="799" height="369" loading="lazy">
         </figure>
-        <div class="hero-badge" aria-hidden="true"><strong>21</strong><span>acre campus on the Brahmaputra</span></div>
+        <div class="hero-badge" aria-hidden="true"><strong>21</strong><span>acre campus at Amingaon</span></div>
       </div>
     </div>
   </section>`;
@@ -283,6 +329,7 @@ export function homePage() {
   ${sectors()}
   ${facilitiesBento()}
   ${incubatees()}
+  ${achievementsPreview()}
   ${news()}
   ${visit()}
   ${ctaBand({

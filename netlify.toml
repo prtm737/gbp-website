@@ -1,0 +1,160 @@
+[build]
+  command = "node build.mjs"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# --- Security headers -------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; frame-src https://www.youtube-nocookie.com https://player.vimeo.com https://maps.google.com https://www.google.com; connect-src 'self'"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/uploads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# --- Old WordPress URLs -> new pages ---------------------------------------
+[[redirects]]
+  from = "/tenders/*"
+  to = "/news.html"
+  status = 301
+
+[[redirects]]
+  from = "/careers/*"
+  to = "/news.html"
+  status = 301
+
+[[redirects]]
+  from = "/publication/*"
+  to = "/news.html"
+  status = 301
+
+[[redirects]]
+  from = "/about-us/*"
+  to = "/about.html"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us/*"
+  to = "/contact.html"
+  status = 301
+
+[[redirects]]
+  from = "/facilities/*"
+  to = "/facilities.html"
+  status = 301
+
+[[redirects]]
+  from = "/incubation/*"
+  to = "/incubation.html"
+  status = 301
+
+[[redirects]]
+  from = "/gallery/*"
+  to = "/achievements.html"
+  status = 301
+
+[[redirects]]
+  from = "/achievements/*"
+  to = "/achievements.html"
+  status = 301
+
+[[redirects]]
+  from = "/news/*"
+  to = "/news.html"
+  status = 301
+
+[[redirects]]
+  from = "/events/*"
+  to = "/achievements.html"
+  status = 301
+
+[[redirects]]
+  from = "/training/*"
+  to = "/facilities.html#training"
+  status = 301
+
+[[redirects]]
+  from = "/bamboo-startup-competition-2023/*"
+  to = "/achievements.html"
+  status = 301
+
+[[redirects]]
+  from = "/category/*"
+  to = "/news.html"
+  status = 301
+
+[[redirects]]
+  from = "/tag/*"
+  to = "/news.html"
+  status = 301
+
+[[redirects]]
+  from = "/author/*"
+  to = "/news.html"
+  status = 301
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/admin/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/admin/"
+  status = 301
+
+[[redirects]]
+  from = "/feed/*"
+  to = "/news.html"
+  status = 301
+
+[[redirects]]
+  from = "/sitemap_index.xml"
+  to = "/sitemap.xml"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

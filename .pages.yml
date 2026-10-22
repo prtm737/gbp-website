@@ -1,0 +1,527 @@
+# Pages CMS configuration — the editor at https://app.pagescms.org
+# Editors sign in with GitHub, open this repository, and edit the JSON files below.
+# Every save commits to the main branch, which triggers a Netlify rebuild.
+
+media:
+  input: assets/uploads
+  output: /assets/uploads
+
+content:
+  - name: achievements
+    label: Achievements & activities
+    type: file
+    path: content/achievements.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: URL anchor
+        type: string
+        required: true
+        hint: 'Short lowercase id, e.g. honey-lab. Used for links like achievements.html#honey-lab.'
+      - name: date
+        label: Date
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - name: facility
+              label: Facilities
+            - name: outreach
+              label: Outreach
+            - name: training
+              label: Training
+            - name: innovation
+              label: Innovation
+            - name: community
+              label: Community
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: summary
+        label: Summary
+        type: text
+        required: true
+      - name: location
+        label: Location
+        type: string
+      - name: image
+        label: Cover photo
+        type: image
+        required: true
+        hint: 'Recommended 1600×1000. Upload a photo or use a generated brand image.'
+      - name: gallery
+        label: More photos
+        type: image
+        list: true
+        hint: Optional additional photos shown in the viewer.
+      - name: videoUrl
+        label: Video URL
+        type: string
+        hint: 'YouTube, Vimeo or a direct .mp4/.webm link. Leave empty for a photo-only entry.'
+      - name: featured
+        label: Feature on homepage
+        type: boolean
+
+  - name: sections
+    label: Extra content sections
+    type: file
+    path: content/sections.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: URL anchor
+        type: string
+        hint: 'Unique id, e.g. campus-green. Used for direct links.'
+      - name: placement
+        label: Show on page
+        type: select
+        options:
+          values:
+            - name: home
+              label: Home
+            - name: about
+              label: About
+            - name: facilities
+              label: Facilities
+            - name: incubation
+              label: Incubation
+            - name: achievements
+              label: Achievements
+            - name: news
+              label: News & tenders
+            - name: contact
+              label: Contact
+      - name: enabled
+        label: Show this section
+        type: boolean
+      - name: order
+        label: Order
+        type: number
+        hint: 'Lower numbers appear first.'
+      - name: theme
+        label: Background
+        type: select
+        options:
+          values:
+            - name: plain
+              label: Plain
+            - name: tint
+              label: Tinted
+            - name: dark
+              label: Dark green
+      - name: eyebrow
+        label: Small label
+        type: string
+      - name: title
+        label: Heading
+        type: string
+        required: true
+      - name: body
+        label: Text
+        type: text
+        hint: 'Separate paragraphs with a blank line.'
+      - name: image
+        label: Image
+        type: image
+      - name: imageAlt
+        label: Image description
+        type: string
+      - name: imageSide
+        label: Image position
+        type: select
+        options:
+          values:
+            - name: right
+              label: Right
+            - name: left
+              label: Left
+      - name: linkLabel
+        label: Link label
+        type: string
+      - name: linkHref
+        label: Link URL
+        type: string
+
+  - name: news
+    label: News, tenders & careers
+    type: file
+    path: content/news.json
+    format: json
+    list: true
+    fields:
+      - name: date
+        label: Date
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: cat
+        label: Category
+        type: select
+        options:
+          values:
+            - tenders
+            - training
+            - news
+            - careers
+            - events
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: href
+        label: Link
+        type: string
+        required: true
+        hint: 'Full URL to the official notice or document.'
+      - name: external
+        label: Opens on another website
+        type: boolean
+
+  - name: facilities
+    label: Facilities
+    type: file
+    path: content/facilities.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: URL anchor
+        type: string
+        required: true
+      - name: icon
+        label: Icon
+        type: select
+        options:
+          values: [microscope, honey, cpu, rocket, fish, users, book, globe, building]
+      - name: title
+        label: Name
+        type: string
+        required: true
+      - name: short
+        label: Short name
+        type: string
+      - name: tag
+        label: Tag
+        type: string
+      - name: text
+        label: Description
+        type: text
+        required: true
+      - name: points
+        label: Key points
+        type: string
+        list: true
+      - name: img
+        label: Photo
+        type: image
+      - name: imgAlt
+        label: Photo description
+        type: string
+
+  - name: incubatees
+    label: Incubatees
+    type: file
+    path: content/incubatees.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: legal
+        label: Legal name
+        type: string
+      - name: sector
+        label: Sector
+        type: string
+      - name: desc
+        label: Description
+        type: text
+      - name: url
+        label: Website
+        type: string
+      - name: note
+        label: Note
+        type: string
+      - name: logo
+        label: Logo
+        type: image
+
+  - name: sectors
+    label: Focus sectors
+    type: file
+    path: content/sectors.json
+    format: json
+    list: true
+    fields:
+      - name: n
+        label: Number
+        type: string
+      - name: icon
+        label: Icon
+        type: select
+        options:
+          values: [heart, sprout, leaf, spark, fish, factory, food, cpu, flask]
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: text
+        label: Description
+        type: text
+
+  - name: faqs
+    label: FAQs
+    type: file
+    path: content/faqs.json
+    format: json
+    list: true
+    fields:
+      - name: q
+        label: Question
+        type: string
+        required: true
+      - name: a
+        label: Answer
+        type: text
+        required: true
+
+  - name: leadership
+    label: Leadership
+    type: file
+    path: content/leadership.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: role
+        label: Role
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: tag
+        label: Short tag
+        type: string
+
+  - name: staff
+    label: Team directory
+    type: file
+    path: content/staff.json
+    format: json
+    list: true
+    fields:
+      - name: group
+        label: Group
+        type: string
+        required: true
+      - name: icon
+        label: Icon
+        type: select
+        options:
+          values: [users, file, building, flask]
+      - name: people
+        label: People
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: role
+            label: Role
+            type: string
+          - name: phone
+            label: Phone
+            type: string
+          - name: email
+            label: Email
+            type: string
+
+  - name: downloads
+    label: Downloads
+    type: file
+    path: content/downloads.json
+    format: json
+    list: true
+    fields:
+      - name: label
+        label: Label
+        type: string
+        required: true
+      - name: note
+        label: Description
+        type: string
+      - name: href
+        label: File URL
+        type: string
+        required: true
+
+  - name: pages
+    label: Page titles & SEO
+    type: file
+    path: content/pages.json
+    format: json
+    fields:
+      - name: home
+        label: Home
+        type: object
+        fields:
+          - name: title
+            label: Page title
+            type: string
+          - name: description
+            label: Meta description
+            type: text
+          - name: ogImage
+            label: Social share image
+            type: image
+      - name: about
+        label: About
+        type: object
+      - name: facilities
+        label: Facilities
+        type: object
+      - name: incubation
+        label: Incubation
+        type: object
+      - name: achievements
+        label: Achievements
+        type: object
+      - name: news
+        label: News & tenders
+        type: object
+      - name: contact
+        label: Contact
+        type: object
+
+  - name: site
+    label: Site settings
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: name
+        label: Organisation name
+        type: string
+        required: true
+      - name: short
+        label: Short name
+        type: string
+      - name: tagline
+        label: Tagline
+        type: string
+      - name: email
+        label: General email
+        type: string
+      - name: ceoEmail
+        label: CEO email
+        type: string
+      - name: rhtlEmail
+        label: Honey lab email
+        type: string
+      - name: phone
+        label: Phone
+        type: string
+      - name: address
+        label: Postal address
+        type: text
+      - name: map
+        label: Map embed URL
+        type: string
+      - name: mapLink
+        label: Google Maps link
+        type: string
+      - name: facebook
+        label: Facebook
+        type: string
+      - name: instagram
+        label: Instagram
+        type: string
+      - name: twitter
+        label: X / Twitter
+        type: string
+      - name: url
+        label: Canonical site URL
+        type: string
+        hint: 'Used for canonical links, sitemap and social images. Example: https://www.guwahatibiotechpark.com'
+      - name: source
+        label: Existing WordPress site
+        type: string
+      - name: logo
+        label: Logo path
+        type: string
+      - name: ogImage
+        label: Default social share image
+        type: image
+      - name: locale
+        label: Locale
+        type: string
+
+  - name: navigation
+    label: Main navigation
+    type: file
+    path: content/navigation.json
+    format: json
+    list: true
+    fields:
+      - name: key
+        label: Page key
+        type: string
+        required: true
+        hint: 'Must match the page file, e.g. about, facilities, achievements.'
+      - name: label
+        label: Menu label
+        type: string
+        required: true
+      - name: href
+        label: Link
+        type: string
+        required: true
+
+  - name: institutes
+    label: Partner institutes
+    type: file
+    path: content/institutes.json
+    format: json
+    fields:
+      - name: institutes
+        label: Institutes
+        type: string
+        list: true
+      - name: centres
+        label: Research centres
+        type: string
+        list: true
+      - name: universities
+        label: Universities
+        type: string
+        list: true
+
+  - name: categories
+    label: News categories
+    type: file
+    path: content/categories.json
+    format: json
+    list: true
+    fields:
+      - name: key
+        label: Key
+        type: string
+        required: true
+      - name: label
+        label: Label
+        type: string
+        required: true

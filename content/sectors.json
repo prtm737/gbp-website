@@ -1,0 +1,56 @@
+[
+  {
+    "n": "01",
+    "icon": "heart",
+    "title": "Healthcare & Pharmaceuticals",
+    "text": "Therapeutics, herbal and natural-product medicines, fermentation products, immunodiagnostics, biosensors, vaccines, gene therapy and monoclonal antibodies."
+  },
+  {
+    "n": "02",
+    "icon": "sprout",
+    "title": "Agro-Technology",
+    "text": "Crop quality and yield, floriculture, forest tree species, plant molecular biology, biopesticides, biofertilisers and processed foods."
+  },
+  {
+    "n": "03",
+    "icon": "leaf",
+    "title": "Environment",
+    "text": "Bioremediation, microbial enhanced oil recovery, and the safe disposal of wastes and toxic materials."
+  },
+  {
+    "n": "04",
+    "icon": "spark",
+    "title": "Energy",
+    "text": "Biofuels and renewable energy sources, including work on second-generation ethanol from agricultural waste."
+  },
+  {
+    "n": "05",
+    "icon": "fish",
+    "title": "Fisheries & Aquaculture",
+    "text": "Hatchery and grow-out innovation, ornamental fish, biofloc systems and value addition through the BICFA centre."
+  },
+  {
+    "n": "06",
+    "icon": "factory",
+    "title": "Industrial Application",
+    "text": "Drug intermediates, active pharmaceutical ingredients, plants as bioreactors, enzymes, catalysts, chemicals and biopolymers."
+  },
+  {
+    "n": "07",
+    "icon": "food",
+    "title": "Food Processing",
+    "text": "Molecular characterisation and value addition, shelf-life improvement, quality assessment and traditional processed foods."
+  },
+  {
+    "n": "08",
+    "icon": "cpu",
+    "title": "Bioinformatics",
+    "text": "Computational biology, data analysis and training supported by the park’s dedicated Bioinformatics Facility."
+  },
+  {
+    "n": "09",
+    "icon": "flask",
+    "title": "Plant Tissue Culture",
+    "text": "Micropropagation, plant molecular biology and tissue-culture services for horticulture, forestry and commercial crops."
+  }
+]

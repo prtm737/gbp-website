@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /404.html
+Disallow: /*?*
+
+Sitemap: https://www.guwahatibiotechpark.com/sitemap.xml
+Host: www.guwahatibiotechpark.com

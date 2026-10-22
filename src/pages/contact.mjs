@@ -121,7 +121,7 @@ function visit() {
       ${sectionHead({
         eyebrow: 'Visit',
         title: 'Find the campus at Amingaon.',
-        note: 'On the north bank of the Brahmaputra, near the S.P. Office and within reach of IIT Guwahati, Gauhati University and the Brahmaputra Industrial Park.'
+        note: 'At Amingaon, near the S.P. Office and within reach of IIT Guwahati, Gauhati University and the Brahmaputra Industrial Park.'
       })}
       <div class="visit-grid">
         <div class="visit-map reveal">

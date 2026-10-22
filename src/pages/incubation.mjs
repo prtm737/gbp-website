@@ -174,7 +174,7 @@ function downloads() {
         eyebrow: 'Application pack',
         title: 'Everything you need to apply.',
         note: 'Official forms and reference documents from Guwahati Biotech Park. Download the application format and all annexures before submitting.',
-        link: { label: 'Official publications', href: `${SITE.source}/publication/` }
+        link: { label: 'Notices & publications', href: 'news.html#updates' }
       })}
       <div class="download-grid">
         ${DOWNLOADS.map(

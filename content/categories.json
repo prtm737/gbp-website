@@ -1,0 +1,26 @@
+[
+  {
+    "key": "all",
+    "label": "All updates"
+  },
+  {
+    "key": "tenders",
+    "label": "Tenders"
+  },
+  {
+    "key": "training",
+    "label": "Training"
+  },
+  {
+    "key": "news",
+    "label": "News"
+  },
+  {
+    "key": "careers",
+    "label": "Careers"
+  },
+  {
+    "key": "events",
+    "label": "Events"
+  }
+]

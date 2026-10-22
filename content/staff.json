@@ -1,0 +1,80 @@
+[
+  {
+    "group": "Administration",
+    "icon": "users",
+    "people": [
+      {
+        "name": "Ms. Monsumi Gogoi",
+        "role": "Administrative Officer",
+        "phone": "+91 90850 60009",
+        "email": "m.gogoi@guwahatibiotechpark.com"
+      }
+    ]
+  },
+  {
+    "group": "Finance & Accounts",
+    "icon": "file",
+    "people": [
+      {
+        "name": "Mr. Ranjan Das",
+        "role": "Accountant",
+        "phone": "+91 84718 52003",
+        "email": "r.das@guwahatibiotechpark.com"
+      }
+    ]
+  },
+  {
+    "group": "Maintenance & Operations",
+    "icon": "building",
+    "people": [
+      {
+        "name": "Shri Pritom Parashar",
+        "role": "Junior Engineer",
+        "phone": "+91 70024 03106",
+        "email": "pritom.parashar@guwahatibiotechpark.com"
+      }
+    ]
+  },
+  {
+    "group": "Scientific Team",
+    "icon": "flask",
+    "people": [
+      {
+        "name": "Dr. Bula Choudhury",
+        "role": "Senior Scientist",
+        "phone": "+91 99547 57390",
+        "email": "b.choudhury@guwahatibiotechpark.com"
+      },
+      {
+        "name": "Dr. Saurav Dey",
+        "role": "Scientist",
+        "phone": "+91 97077 70092",
+        "email": "s.dey@guwahatibiotechpark.com"
+      },
+      {
+        "name": "Dr. Rajiv Chandra Dev Goswami",
+        "role": "Research Associate",
+        "phone": "+91 86381 81323",
+        "email": "r.goswami@guwahatibiotechpark.com"
+      },
+      {
+        "name": "Dr. Prajjalendra Kr. Barooah",
+        "role": "Research Associate",
+        "phone": "+91 70021 90312",
+        "email": "p.barooah@guwahatibiotechpark.com"
+      },
+      {
+        "name": "Shri Kamal Gauli",
+        "role": "Scientific Assistant",
+        "phone": "+91 70023 53756",
+        "email": "k.gauli@guwahatibiotechpark.com"
+      },
+      {
+        "name": "Smt. Rinki Kalita",
+        "role": "Scientific Assistant",
+        "phone": "+91 69009 19099",
+        "email": "r.kalita@guwahatibiotechpark.com"
+      }
+    ]
+  }
+]

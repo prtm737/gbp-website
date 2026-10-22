@@ -1,0 +1,74 @@
+[
+  {
+    "id": "honey-lab",
+    "date": "2026-05-20",
+    "category": "facility",
+    "title": "Regional Honey Testing Laboratory serves beekeepers and FPOs",
+    "summary": "The on-campus RHTL supports beekeepers, farmer producer organisations and food businesses with quality, authenticity and safety testing, including sugar-profile and heavy-metal analysis.",
+    "location": "Regional Honey Testing Laboratory, Amingaon",
+    "image": "assets/img/generated/achievement-honey-lab.jpg",
+    "gallery": [],
+    "videoUrl": "",
+    "featured": true
+  },
+  {
+    "id": "arbor-day",
+    "date": "2025-07-15",
+    "category": "outreach",
+    "title": "Arbor Day tree-planting drive on the Amingaon campus",
+    "summary": "Staff, incubatees and guests joined a campus-wide plantation drive, adding native species to the green cover around the Technology Incubation Centre.",
+    "location": "Guwahati Biotech Park campus, Amingaon",
+    "image": "assets/img/generated/achievement-tree-planting.jpg",
+    "gallery": [],
+    "videoUrl": "",
+    "featured": true
+  },
+  {
+    "id": "bio-entrepreneur-training",
+    "date": "2026-07-25",
+    "category": "training",
+    "title": "Bio-entrepreneurial skills training and internship programme",
+    "summary": "A five-day programme for undergraduate and postgraduate students from across Assam, combining laboratory exposure with the practical side of building a bio-venture.",
+    "location": "Technology Incubation Centre, Amingaon",
+    "image": "assets/img/generated/achievement-training.jpg",
+    "gallery": [],
+    "videoUrl": "",
+    "featured": true
+  },
+  {
+    "id": "nidhi-prayas",
+    "date": "2026-02-10",
+    "category": "innovation",
+    "title": "NIDHI PRAYAS innovators move from drawing to prototype",
+    "summary": "Pre-incubation teams used the park’s prototyping and fab-lab support to test designs, validate assumptions and prepare for the next stage of product development.",
+    "location": "NIDHI PRAYAS centre, Amingaon",
+    "image": "assets/img/generated/achievement-innovation.jpg",
+    "gallery": [],
+    "videoUrl": "",
+    "featured": false
+  },
+  {
+    "id": "incubatee-community",
+    "date": "2026-01-12",
+    "category": "community",
+    "title": "Thirteen ventures working from one campus",
+    "summary": "From genomics and enzymes to mead, medtech and fisheries, the park’s incubatee community now spans thirteen resident companies and institutions.",
+    "location": "Technology Incubation Centre, Amingaon",
+    "image": "assets/img/generated/achievement-incubation.jpg",
+    "gallery": [],
+    "videoUrl": "",
+    "featured": false
+  },
+  {
+    "id": "student-exposure-visits",
+    "date": "2026-03-05",
+    "category": "outreach",
+    "title": "Student exposure visits and hands-on instrument training",
+    "summary": "School, college and university groups visited the park for guided laboratory sessions on analytical instruments, bioinformatics and applied biotechnology.",
+    "location": "Guwahati Biotech Park campus, Amingaon",
+    "image": "assets/img/generated/achievement-outreach.jpg",
+    "gallery": [],
+    "videoUrl": "",
+    "featured": false
+  }
+]

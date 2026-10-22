@@ -1,4 +1,5 @@
 import { icon } from './icons.mjs';
+import { SECTIONS } from './data.mjs';
 
 const CAT_LABELS = {
   tenders: 'Tender',
@@ -92,4 +93,43 @@ export function anchorBar(items) {
       ${items.map((i) => `<a href="#${i.id}">${i.label}</a>`).join('')}
     </nav>
   </div>`;
+}
+
+const escText = (value) =>
+  String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+export function customSections(pageKey) {
+  return SECTIONS.filter((s) => s.enabled && s.placement === pageKey)
+    .sort((a, b) => Number(a.order || 0) - Number(b.order || 0))
+    .map((s, i) => {
+      const theme = s.theme === 'dark' ? ' section-dark' : s.theme === 'tint' ? ' section-tint' : '';
+      const media = s.image
+        ? `<figure class="custom-media reveal"><img src="${escText(s.image)}" alt="${escText(s.imageAlt || s.title)}" width="800" height="600" loading="lazy" decoding="async"></figure>`
+        : '';
+      const copy = s.body
+        ? String(s.body)
+            .split(/\n\s*\n/)
+            .map((p) => `<p>${escText(p)}</p>`)
+            .join('')
+        : '';
+      const link = s.linkLabel && s.linkHref
+        ? `<a class="text-link" href="${escText(s.linkHref)}">${escText(s.linkLabel)} ${icon('arrow')}</a>`
+        : '';
+      return `<section class="section custom-section${theme}" id="${escText(s.id || `section-${i + 1}`)}">
+    <div class="wrap custom-grid${s.imageSide === 'left' ? ' is-media-left' : ''}${!media ? ' is-text-only' : ''}">
+      <div class="custom-copy reveal">
+        ${s.eyebrow ? `<p class="eyebrow">${escText(s.eyebrow)}</p>` : ''}
+        <h2 class="display">${escText(s.title)}</h2>
+        ${copy}
+        ${link}
+      </div>
+      ${media}
+    </div>
+  </section>`;
+    })
+    .join('');
 }

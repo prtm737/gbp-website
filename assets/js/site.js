@@ -459,4 +459,203 @@
     { passive: true }
   );
   window.addEventListener('resize', updateProgress);
+
+  var achievementGrid = document.getElementById('achievement-grid');
+  var achievementTabs = document.querySelector('[data-achievement-tabs]');
+  if (achievementGrid && achievementTabs) {
+    var achTabs = achievementTabs.querySelectorAll('[data-achievement-tab]');
+    var achEmpty = document.querySelector('[data-achievement-empty]');
+    var applyAchievementFilter = function (cat) {
+      var cards = achievementGrid.querySelectorAll('[data-achievement]');
+      var shown = 0;
+      for (var i = 0; i < cards.length; i += 1) {
+        var ok = cat === 'all' || cards[i].getAttribute('data-cat') === cat;
+        cards[i].hidden = !ok;
+        if (ok) shown += 1;
+      }
+      if (achEmpty) {
+        achEmpty.hidden = shown !== 0;
+        achEmpty.classList.toggle('is-visible', shown === 0);
+      }
+    };
+    for (var at = 0; at < achTabs.length; at += 1) {
+      achTabs[at].addEventListener('click', function () {
+        for (var k = 0; k < achTabs.length; k += 1) {
+          var on = achTabs[k] === this;
+          achTabs[k].classList.toggle('is-active', on);
+          achTabs[k].setAttribute('aria-pressed', on ? 'true' : 'false');
+        }
+        applyAchievementFilter(this.getAttribute('data-achievement-tab'));
+      });
+    }
+  }
+
+  var lightbox = document.getElementById('lightbox');
+  var lightboxStage = document.getElementById('lightbox-stage');
+  var lightboxThumbs = document.getElementById('lightbox-thumbs');
+  var lightboxTitle = document.getElementById('lightbox-title');
+  var lightboxSummary = document.getElementById('lightbox-summary');
+  var lightboxMeta = document.getElementById('lightbox-meta');
+  var lightboxLoc = document.getElementById('lightbox-loc');
+  var lightboxClose = document.querySelector('[data-lightbox-close]');
+  var lightboxImages = [];
+  var lightboxIndex = 0;
+
+  function parseMediaUrl(value) {
+    if (!value) return null;
+    var url;
+    try {
+      url = new URL(value, window.location.href);
+    } catch (e) {
+      return null;
+    }
+    if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
+    var host = url.hostname.replace(/^www\./, '');
+    if (host === 'youtu.be') {
+      var shortId = url.pathname.split('/').filter(Boolean)[0];
+      if (shortId) return { type: 'iframe', src: 'https://www.youtube-nocookie.com/embed/' + shortId + '?autoplay=1&rel=0' };
+    }
+    if (host === 'youtube.com' || host === 'm.youtube.com' || host === 'youtube-nocookie.com') {
+      var ytId = url.searchParams.get('v');
+      if (!ytId && url.pathname.indexOf('/embed/') === 0) ytId = url.pathname.split('/')[2];
+      if (!ytId && url.pathname.indexOf('/shorts/') === 0) ytId = url.pathname.split('/')[2];
+      if (ytId) return { type: 'iframe', src: 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(ytId) + '?autoplay=1&rel=0' };
+    }
+    if (host === 'vimeo.com' || host === 'player.vimeo.com') {
+      var vimeoId = url.pathname.split('/').filter(Boolean)[0];
+      if (vimeoId) return { type: 'iframe', src: 'https://player.vimeo.com/video/' + encodeURIComponent(vimeoId) + '?autoplay=1' };
+    }
+    if (/\.(mp4|webm|ogg)$/i.test(url.pathname)) {
+      return { type: 'video', src: url.href };
+    }
+    return { type: 'link', src: url.href };
+  }
+
+  function renderLightboxStage(index) {
+    if (!lightboxStage) return;
+    lightboxIndex = index;
+    var src = lightboxImages[index];
+    lightboxStage.innerHTML = '';
+    if (!src) return;
+    var img = document.createElement('img');
+    img.src = src;
+    img.alt = lightboxTitle ? lightboxTitle.textContent || 'Activity photo' : 'Activity photo';
+    lightboxStage.appendChild(img);
+    var thumbs = lightboxThumbs ? lightboxThumbs.querySelectorAll('button') : [];
+    for (var t = 0; t < thumbs.length; t += 1) {
+      thumbs[t].classList.toggle('is-active', t === index);
+    }
+  }
+
+  function renderLightboxThumbs() {
+    if (!lightboxThumbs) return;
+    lightboxThumbs.innerHTML = '';
+    if (lightboxImages.length < 2) return;
+    for (var i = 0; i < lightboxImages.length; i += 1) {
+      (function (idx) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('aria-label', 'Show photo ' + (idx + 1));
+        if (idx === lightboxIndex) btn.className = 'is-active';
+        var thumb = document.createElement('img');
+        thumb.src = lightboxImages[idx];
+        thumb.alt = '';
+        btn.appendChild(thumb);
+        btn.addEventListener('click', function () {
+          renderLightboxStage(idx);
+        });
+        lightboxThumbs.appendChild(btn);
+      })(i);
+    }
+  }
+
+  function openLightbox(trigger) {
+    if (!lightbox) return;
+    var title = trigger.getAttribute('data-title') || '';
+    var summary = trigger.getAttribute('data-summary') || '';
+    var date = trigger.getAttribute('data-date') || '';
+    var location = trigger.getAttribute('data-location') || '';
+    var image = trigger.getAttribute('data-image') || '';
+    var video = trigger.getAttribute('data-video') || '';
+    var gallery = [];
+    try {
+      gallery = JSON.parse(trigger.getAttribute('data-gallery') || '[]');
+      if (!Array.isArray(gallery)) gallery = [];
+    } catch (e) {
+      gallery = [];
+    }
+
+    if (lightboxTitle) lightboxTitle.textContent = title;
+    if (lightboxSummary) lightboxSummary.textContent = summary;
+    if (lightboxMeta) lightboxMeta.textContent = date;
+    if (lightboxLoc) lightboxLoc.textContent = location;
+
+    lightboxImages = image ? [image].concat(gallery.filter(Boolean)) : gallery.filter(Boolean);
+    lightboxIndex = 0;
+
+    if (lightboxStage) lightboxStage.innerHTML = '';
+    if (video && lightboxStage) {
+      var media = parseMediaUrl(video);
+      if (media && media.type === 'iframe') {
+        var frame = document.createElement('iframe');
+        frame.src = media.src;
+        frame.title = title;
+        frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        frame.allowFullscreen = true;
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        lightboxStage.appendChild(frame);
+      } else if (media && media.type === 'video') {
+        var vid = document.createElement('video');
+        vid.src = media.src;
+        vid.controls = true;
+        vid.autoplay = true;
+        vid.playsInline = true;
+        vid.preload = 'metadata';
+        lightboxStage.appendChild(vid);
+      } else if (media) {
+        var link = document.createElement('a');
+        link.className = 'btn btn-accent';
+        link.href = media.src;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = 'Open video in a new tab';
+        lightboxStage.appendChild(link);
+      }
+      renderLightboxThumbs();
+    } else {
+      renderLightboxStage(0);
+      renderLightboxThumbs();
+    }
+
+    if (!lightbox.open) {
+      if (typeof lightbox.showModal === 'function') lightbox.showModal();
+      else lightbox.setAttribute('open', '');
+    }
+    if (lightboxClose) lightboxClose.focus();
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    if (lightboxStage) lightboxStage.innerHTML = '';
+    if (lightboxThumbs) lightboxThumbs.innerHTML = '';
+    if (typeof lightbox.close === 'function' && lightbox.open) lightbox.close();
+    else lightbox.removeAttribute('open');
+  }
+
+  var lightboxTriggers = document.querySelectorAll('[data-lightbox]');
+  for (var lb = 0; lb < lightboxTriggers.length; lb += 1) {
+    lightboxTriggers[lb].addEventListener('click', function () {
+      openLightbox(this);
+    });
+  }
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightbox) {
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) closeLightbox();
+    });
+    lightbox.addEventListener('cancel', function (event) {
+      event.preventDefault();
+      closeLightbox();
+    });
+  }
 })();

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "tic",
+    "icon": "microscope",
+    "title": "Technology Incubation Centre",
+    "short": "TIC",
+    "tag": "Incubation",
+    "text": "Ready-to-use modular wet laboratories from 300 to 1,900 sq ft, with the shared services a young company needs to start without heavy upfront investment.",
+    "points": [
+      "Fully furnished modular wet labs with core and shell utilities",
+      "Flexible leases for startups, researchers and companies",
+      "Shared office services, conference room and auditorium",
+      "Access to specialised analytical and bioprospecting facilities"
+    ],
+    "img": "assets/img/instrument_lab.jpg",
+    "imgAlt": "Analytical instruments inside a laboratory at Guwahati Biotech Park"
+  },
+  {
+    "id": "rhtl",
+    "icon": "honey",
+    "title": "Regional Honey Testing Laboratory",
+    "short": "RHTL",
+    "tag": "Testing",
+    "text": "A dedicated honey and bee-product laboratory supported by the National Bee Board under the National Beekeeping and Honey Mission.",
+    "points": [
+      "HPLC, LC-MS/MS and EA-LC-IRMS instrumentation",
+      "Quality, authenticity, sugar-profile, pollen and heavy-metal analysis",
+      "FSSAI-aligned basic quality and authenticity packages",
+      "Sample submission at the lab or by courier"
+    ],
+    "img": "assets/img/instrument_lab.jpg",
+    "imgAlt": "Laboratory instruments used for honey analysis"
+  },
+  {
+    "id": "bif",
+    "icon": "cpu",
+    "title": "Bioinformatics Facility",
+    "short": "BIF",
+    "tag": "Computing",
+    "text": "Dedicated computing and analytical support for genomics, proteomics and data-driven biology, with training for students and industry teams.",
+    "points": [
+      "Dedicated bioinformatics workstations and software",
+      "Requisition-based access for projects and dissertations",
+      "Hands-on training in the basics of bioinformatics",
+      "Support for genomics and proteomics workflows"
+    ]
+  },
+  {
+    "id": "nidhi",
+    "icon": "rocket",
+    "title": "NIDHI PRAYAS",
+    "short": "Prayas",
+    "tag": "Prototyping",
+    "text": "A pre-incubation and prototyping centre under the national NIDHI-PRAYAS programme, helping innovators move from a drawing to a working proof.",
+    "points": [
+      "Fab-lab and fabrication support for physical prototypes",
+      "Mentorship on design, testing and validation",
+      "A bridge into the park’s incubation ecosystem",
+      "Access to scientific and technical expertise on campus"
+    ]
+  },
+  {
+    "id": "bicfa",
+    "icon": "fish",
+    "title": "BICFA",
+    "short": "BICFA",
+    "tag": "Fisheries",
+    "text": "The Business Incubation Centre for Fisheries and Aquaculture supports founders working across fish, aquaculture and allied value chains.",
+    "points": [
+      "Biofloc and aquaculture demonstration units",
+      "Hatchery, breeding and ornamental fish training",
+      "Fish processing and value-addition programmes",
+      "A dedicated Talent Search Contest for the sector"
+    ]
+  },
+  {
+    "id": "consultancy",
+    "icon": "users",
+    "title": "Consultancy Cell",
+    "short": "Consultancy",
+    "tag": "Advisory",
+    "text": "Scientific and technical advice for entrepreneurs, industry and institutions — from method development to business-plan preparation.",
+    "points": [
+      "Sample testing, analysis and method development",
+      "Instrument-use services, short and long term",
+      "Business-plan preparation and incubation advisory",
+      "Technical feasibility support for new ventures"
+    ]
+  },
+  {
+    "id": "training",
+    "icon": "book",
+    "title": "Training & Exposure Visits",
+    "short": "Training",
+    "tag": "Learning",
+    "text": "Hands-on programmes on sophisticated instruments and applied biotechnology, plus internships, dissertations and guided campus visits.",
+    "points": [
+      "Instrument and technique-based hands-on training",
+      "Internship, project and dissertation placements",
+      "Exposure visits for schools, colleges and universities",
+      "Sector programmes in aquaculture, food and plant science"
+    ]
+  },
+  {
+    "id": "nrdc",
+    "icon": "globe",
+    "title": "North East Cell of NRDC",
+    "short": "NRDC",
+    "tag": "Technology transfer",
+    "text": "The North East cell of the National Research Development Corporation connects regional innovators with technology transfer and IP support.",
+    "points": [
+      "Technology transfer and commercialisation support",
+      "Linkages with national research institutions",
+      "IP and technology-scouting guidance",
+      "A bridge between lab research and industry"
+    ]
+  },
+  {
+    "id": "infrastructure",
+    "icon": "building",
+    "title": "Campus Infrastructure",
+    "short": "Campus",
+    "tag": "Infrastructure",
+    "text": "A 21-acre campus at Amingaon with developed land, common utilities and the shared spaces that make a research community work.",
+    "points": [
+      "21-acre campus at Amingaon, Guwahati",
+      "Library, training rooms, conference room and auditorium",
+      "Cafeteria and common campus services",
+      "Developed land with common infrastructure"
+    ]
+  }
+]

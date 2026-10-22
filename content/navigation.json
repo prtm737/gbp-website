@@ -1,0 +1,32 @@
+[
+  {
+    "key": "about",
+    "label": "About",
+    "href": "about.html"
+  },
+  {
+    "key": "facilities",
+    "label": "Facilities",
+    "href": "facilities.html"
+  },
+  {
+    "key": "incubation",
+    "label": "Incubation",
+    "href": "incubation.html"
+  },
+  {
+    "key": "achievements",
+    "label": "Achievements",
+    "href": "achievements.html"
+  },
+  {
+    "key": "news",
+    "label": "News & Tenders",
+    "href": "news.html"
+  },
+  {
+    "key": "contact",
+    "label": "Contact",
+    "href": "contact.html"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "share-your-story",
+    "placement": "achievements",
+    "enabled": true,
+    "order": 10,
+    "theme": "dark",
+    "eyebrow": "Contribute",
+    "title": "Have photos from a programme at the park?",
+    "body": "Training cohorts, campus drives, prototypes and partnerships — if you have photographs or video from an activity at Amingaon, send them to the communications team so they can be added to this record.\n\nPlease include the date, the activity and a short description with each file.",
+    "image": "assets/img/generated/achievement-outreach.jpg",
+    "imageAlt": "Branded illustration for campus outreach activities at Guwahati Biotech Park",
+    "imageSide": "right",
+    "linkLabel": "Contact the park",
+    "linkHref": "contact.html"
+  }
+]
