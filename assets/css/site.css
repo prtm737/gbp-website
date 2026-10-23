@@ -925,7 +925,7 @@ html:not(.js) .nav-toggle {
   margin-left: 23px;
 }
 
-.hero {
+.hero.legacy {
   position: relative;
   overflow: clip;
   padding: clamp(34px, 5vw, 72px) 0 clamp(52px, 6vw, 88px);
@@ -1761,6 +1761,316 @@ html:not(.js) .nav-toggle {
 .bento-wide .bento-link {
   margin-top: 0;
   flex: none;
+}
+
+/* --- Immersive hero (AI-generated campus backdrop) ---------------------- */
+.hero.hero-immersive {
+  position: relative;
+  overflow: clip;
+  isolation: isolate;
+  padding: clamp(110px, 14vw, 170px) 0 clamp(56px, 7vw, 84px);
+  color: #f2f8ef;
+  background: var(--forest);
+}
+
+.hero-immersive .hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-immersive .hero-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  filter: saturate(1.05) contrast(1.06) brightness(0.82);
+  animation: heroMediaPan 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero-immersive .hero-media-glow {
+  position: absolute;
+  inset: -12% -8% 30% -8%;
+  background:
+    radial-gradient(58% 52% at 72% 28%, rgba(201, 242, 107, 0.34), transparent 62%),
+    radial-gradient(62% 58% at 18% 78%, rgba(31, 122, 86, 0.42), transparent 66%);
+  filter: blur(28px);
+  mix-blend-mode: screen;
+  opacity: 0.75;
+  animation: heroGlowDrift 16s ease-in-out infinite alternate;
+}
+
+.hero-immersive .hero-media-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201, 242, 107, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 242, 107, 0.06) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, transparent 4%, #000 30%, #000 78%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 4%, #000 30%, #000 78%, transparent 100%);
+}
+
+.hero-immersive .hero-media-grain {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+}
+
+.hero-immersive .hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(102deg, rgba(5, 24, 16, 0.92) 0%, rgba(5, 24, 16, 0.78) 34%, rgba(5, 24, 16, 0.42) 62%, rgba(5, 24, 16, 0.58) 100%),
+    linear-gradient(to top, rgba(5, 24, 16, 0.86) 0%, transparent 46%);
+}
+
+.hero-immersive .hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(34px, 5vw, 72px);
+  align-items: center;
+}
+
+.hero-immersive .hero-copy {
+  max-width: 640px;
+}
+
+.hero-immersive .hero-eyebrow {
+  color: var(--lime);
+}
+
+.hero-immersive .hero-eyebrow .pulse {
+  background: var(--lime);
+}
+
+.hero-immersive h1 {
+  font-size: clamp(50px, 6.6vw, 102px);
+  letter-spacing: -0.048em;
+  line-height: 0.93;
+  color: #f4faf0;
+  text-shadow: 0 2px 34px rgba(0, 0, 0, 0.45);
+}
+
+.hero-immersive h1 em {
+  font-style: italic;
+  color: var(--lime);
+}
+
+.hero-immersive .hero-lede {
+  color: rgba(238, 247, 234, 0.78);
+  max-width: 52ch;
+}
+
+.hero-immersive .hero-facts {
+  border-top-color: rgba(255, 255, 255, 0.16);
+  color: rgba(238, 247, 234, 0.78);
+}
+
+.hero-immersive .hero-facts .icon {
+  color: var(--lime);
+}
+
+.hero-immersive .btn-ghost {
+  color: #eef7ea;
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hero-immersive .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+/* 3D floating stack */
+.hero-immersive .hero-stack {
+  --hero-tilt-x: 0deg;
+  --hero-tilt-y: 0deg;
+  position: relative;
+  height: clamp(460px, 46vw, 640px);
+  perspective: 1600px;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--hero-tilt-x)) rotateY(var(--hero-tilt-y));
+  transition: transform 0.45s var(--ease-out);
+  will-change: transform;
+}
+
+.hero-immersive .hero-float {
+  position: absolute;
+  margin: 0;
+  padding: 10px;
+  border-radius: 24px;
+  background: rgba(250, 252, 246, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 58px 110px -42px rgba(3, 30, 20, 0.9),
+    0 20px 40px -26px rgba(3, 30, 20, 0.5);
+  transform-style: preserve-3d;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-immersive .hero-float-frame {
+  display: block;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.hero-immersive .hero-float img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1.02);
+  transition: transform 0.9s var(--ease-out);
+}
+
+.hero-immersive .hero-float:hover img {
+  transform: scale(1.07);
+}
+
+.hero-immersive .hero-float figcaption {
+  padding: 10px 6px 6px;
+  color: var(--ink-soft);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-immersive .hero-float--main {
+  top: 6%;
+  left: 4%;
+  width: 62%;
+  transform: translateZ(110px) rotateY(-6deg) rotateX(2deg);
+  animation: heroFloatMain 9s ease-in-out infinite;
+}
+
+.hero-immersive .hero-float--small {
+  right: -2%;
+  bottom: 8%;
+  width: 52%;
+  transform: translateZ(40px) rotateY(5deg) rotateX(-1deg);
+  animation: heroFloatSmall 11s ease-in-out infinite;
+}
+
+.hero-immersive .hero-badge {
+  top: -4%;
+  right: 2%;
+  transform: translateZ(150px) rotate(8deg);
+  animation: gbp-badge-in 0.8s var(--ease-spring) 0.5s both, gbp-float 7s ease-in-out 1.4s infinite;
+}
+
+.hero-immersive .hero-hub-card {
+  left: 2%;
+  bottom: -14px;
+  transform: translateZ(120px);
+  animation: gbp-fade-in 0.8s var(--ease-out) 0.62s both;
+}
+
+.hero-immersive .hero-rail {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: clamp(40px, 6vw, 72px);
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(238, 247, 234, 0.7);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.hero-scroll:hover {
+  color: #f4faf0;
+}
+
+.hero-scroll-track {
+  position: relative;
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+}
+
+.hero-scroll-track span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background: var(--lime);
+  animation: heroScrollDot 2.4s ease-in-out infinite;
+}
+
+.hero-rail-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: rgba(238, 247, 234, 0.62);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero-rail-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 0 6px rgba(201, 242, 107, 0.18);
+  animation: gbp-pulse 2s ease-in-out infinite;
+}
+
+@keyframes heroMediaPan {
+  from { transform: scale(1.06) translate3d(-1.2%, -0.6%, 0); }
+  to   { transform: scale(1.12) translate3d(1.4%, 0.8%, 0); }
+}
+
+@keyframes heroGlowDrift {
+  from { transform: translate3d(-2%, 0, 0); opacity: 0.7; }
+  to   { transform: translate3d(3%, -2%, 0); opacity: 0.9; }
+}
+
+@keyframes heroFloatMain {
+  0%, 100% { transform: translateZ(110px) rotateY(-6deg) rotateX(2deg) translateY(0); }
+  50%      { transform: translateZ(110px) rotateY(-6deg) rotateX(2deg) translateY(-14px); }
+}
+
+@keyframes heroFloatSmall {
+  0%, 100% { transform: translateZ(40px) rotateY(5deg) rotateX(-1deg) translateY(0); }
+  50%      { transform: translateZ(40px) rotateY(5deg) rotateX(-1deg) translateY(-10px); }
+}
+
+@keyframes heroScrollDot {
+  0%   { top: 0; opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes gbp-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.25); opacity: 0.55; }
 }
 
 .logo-wall {
@@ -5807,6 +6117,19 @@ html:not(.js) .toast {
   }
 
   .hero-deck {
+    transform: none !important;
+  }
+
+  .hero-immersive .hero-media-img,
+  .hero-immersive .hero-media-glow,
+  .hero-immersive .hero-float,
+  .hero-immersive .hero-float--main,
+  .hero-immersive .hero-float--small,
+  .hero-immersive .hero-scroll-track span {
+    animation: none !important;
+  }
+
+  .hero-immersive .hero-stack {
     transform: none !important;
   }
 

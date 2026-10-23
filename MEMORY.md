@@ -80,6 +80,13 @@ JSON-LD before finishing. Generated root `*.html`, `sitemap.xml`, `robots.txt` a
 
 ## Update log
 
+### 2026-10-23 15:45 IST — Immersive AI hero with 3D parallax
+- Generated two new AI images (Pollinations, flux model): `assets/img/generated/hero-campus-ai.jpg` (2048x1088 campus panorama) and `hero-lab-ai.jpg` (900x1084 lab portrait), graded in Pillow.
+- Rebuilt homepage hero as a full-bleed cinematic composition: AI campus image as background with pan/glow animations, dark gradient shade, premium headline, and a 3D floating stack (lab photo, entrance photo, 21-acre badge, campus photo-hub card) that tilts with pointer movement.
+- Removed the homepage ticker for a cleaner premium first view; added a scroll rail and reduced-motion fallbacks.
+- Verification: build succeeds; hero markup and generated images present in dist/; JS syntax clean.
+
+
 ### 2026-10-22 17:56 IST — Netlify deploy source corrected
 - Root cause of the stale live hero: Netlify’s site (`guwahatibiotechpark`)
   is linked to `github.com/prtm737/guwahatibiotechpark`, not `gbp-website`.

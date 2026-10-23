@@ -682,7 +682,7 @@
 })();
 
 (function heroTilt() {
-  var visual = document.querySelector('[data-hero-tilt]');
+  var visual = document.querySelector('.hero-stack[data-hero-tilt]');
   if (!visual) return;
   if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;

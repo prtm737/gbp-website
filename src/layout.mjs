@@ -116,7 +116,7 @@ function head({ title, description, page, ogImage, keywords, noindex = false }) 
   <meta name="geo.placename" content="Amingaon, Guwahati">
   <link rel="canonical" href="${pageUrl}">
   <link rel="alternate" hreflang="en-in" href="${pageUrl}">
-  <meta property="og:type" content="${page === 'home' ? 'website' : 'article'}">
+  ${page === 'home' ? '<link rel="preload" as="image" href="assets/img/generated/hero-campus-ai.jpg" fetchpriority="high">' : ''}  <meta property="og:type" content="${page === 'home' ? 'website' : 'article'}">
   <meta property="og:locale" content="${SITE.locale || 'en_IN'}">
   <meta property="og:site_name" content="${SITE.name}">
   <meta property="og:title" content="${fullTitle}">

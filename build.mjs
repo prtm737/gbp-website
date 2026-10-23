@@ -70,7 +70,6 @@ const pages = [
   {
     file: 'index.html',
     key: 'home',
-    ticker: true,
     keywords:
       'Guwahati Biotech Park, biotech park Assam, biotech incubation India, Amingaon Guwahati, Technology Incubation Centre, biotech startup Northeast India',
     render: homePage

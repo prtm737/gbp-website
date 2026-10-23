@@ -154,7 +154,7 @@ function facilitiesBento() {
 }
 
 function stats() {
-  return `<section class="stats-band">
+  return `<section class="stats-band" id="stats">
     <div class="wrap">
       <dl class="stats">
         <div class="reveal"><dt>21</dt><dd>acres at Amingaon, Guwahati</dd></div>
@@ -291,12 +291,19 @@ function visit() {
 }
 
 function hero() {
-  return `<section class="hero">
-    <div class="hero-grid-bg" aria-hidden="true"></div>
-    <div class="wrap hero-grid">
+  return `<section class="hero hero-immersive" data-hero aria-labelledby="hero-title">
+    <div class="hero-media" aria-hidden="true">
+      <img class="hero-media-img" src="assets/img/generated/hero-campus-ai.jpg" alt="" width="2048" height="1088" fetchpriority="high" decoding="async">
+      <span class="hero-media-glow"></span>
+      <span class="hero-media-grid"></span>
+      <span class="hero-media-grain"></span>
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+
+    <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Technology Incubation Centre · Amingaon</p>
-        <h1 class="display">Where the Northeast’s bio-science becomes <em>business.</em></h1>
+        <p class="eyebrow hero-eyebrow"><span class="pulse" aria-hidden="true"></span> Technology Incubation Centre · Amingaon</p>
+        <h1 class="display" id="hero-title">Where the Northeast’s bio-science becomes <em>business.</em></h1>
         <p class="hero-lede">The region’s first biotech park — a joint initiative of the Government of Assam and the Department of Biotechnology, Government of India. Ready-to-use labs, scientific expertise and a community built to take ideas to market.</p>
         <div class="btn-row hero-actions">
           <a class="btn btn-primary btn-lg" href="incubation.html#apply">Apply for incubation ${icon('arrow')}</a>
@@ -308,29 +315,35 @@ function hero() {
           <li>${icon('check')} 13 resident incubatees</li>
         </ul>
       </div>
-      <div class="hero-visual" data-hero-tilt>
-        <div class="hero-deck">
-          <figure class="hero-frame">
-            <img src="assets/img/main_entrance.jpg" alt="The main entrance of Guwahati Biotech Park with the Indian flag flying" width="678" height="383" fetchpriority="high">
-            <span class="hero-frame-count">Amingaon · 01 / 03</span>
-            <figcaption><span class="dot" aria-hidden="true"></span> Technology Incubation Centre, Amingaon</figcaption>
-          </figure>
-          <figure class="hero-photo hero-photo--lab">
-            <img src="assets/img/biotech1.jpg" alt="A scientist working with a molecular model at Guwahati Biotech Park" width="790" height="410" loading="lazy">
-            <figcaption>Bio-science, in practice</figcaption>
-          </figure>
-          <figure class="hero-photo hero-photo--labs">
-            <img src="assets/img/instrument_lab.jpg" alt="Analytical instruments inside a laboratory at Guwahati Biotech Park" width="800" height="370" loading="lazy">
-            <figcaption>Labs, ready to use</figcaption>
-          </figure>
-          <div class="hero-badge" aria-hidden="true"><strong>21</strong><span>acre campus<br>at Amingaon</span></div>
-          <a class="hero-hub-card" href="achievements.html" aria-label="Open the campus photo hub">
-            <span class="hero-hub-icon">${icon('camera')}</span>
-            <span class="hero-hub-copy"><strong>Campus photo hub</strong><small>Labs · people · milestones</small></span>
-            <span class="hero-hub-count">${ACHIEVEMENTS.length}</span>
-          </a>
-        </div>
+
+      <div class="hero-stack" data-hero-tilt>
+        <figure class="hero-float hero-float--main">
+          <span class="hero-float-frame">
+            <img src="assets/img/generated/hero-lab-ai.jpg" alt="A researcher examining a sample in a Guwahati Biotech Park laboratory" width="900" height="1084" loading="lazy" decoding="async">
+          </span>
+          <figcaption><span class="dot" aria-hidden="true"></span> Wet labs · instrument-ready</figcaption>
+        </figure>
+        <figure class="hero-float hero-float--small">
+          <span class="hero-float-frame">
+            <img src="assets/img/main_entrance.jpg" alt="The main entrance of Guwahati Biotech Park with the Indian flag flying" width="680" height="385" loading="lazy" decoding="async">
+          </span>
+          <figcaption>Technology Incubation Centre</figcaption>
+        </figure>
+        <div class="hero-badge" aria-hidden="true"><strong>21</strong><span>acre campus<br>at Amingaon</span></div>
+        <a class="hero-hub-card" href="achievements.html" aria-label="Open the campus photo hub">
+          <span class="hero-hub-icon">${icon('camera')}</span>
+          <span class="hero-hub-copy"><strong>Campus photo hub</strong><small>Labs · people · milestones</small></span>
+          <span class="hero-hub-count">${ACHIEVEMENTS.length}</span>
+        </a>
       </div>
+    </div>
+
+    <div class="wrap hero-rail">
+      <a class="hero-scroll" href="#stats">
+        <span class="hero-scroll-track" aria-hidden="true"><span></span></span>
+        <span>Scroll to explore</span>
+      </a>
+      <p class="hero-rail-note"><span class="hero-rail-dot" aria-hidden="true"></span> Amingaon · Guwahati · Assam 781031</p>
     </div>
   </section>`;
 }
