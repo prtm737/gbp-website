@@ -316,25 +316,21 @@ function hero() {
         </ul>
       </div>
 
-      <div class="hero-stack" data-hero-tilt>
-        <figure class="hero-float hero-float--main">
-          <span class="hero-float-frame">
-            <img src="assets/img/generated/hero-lab-ai.jpg" alt="A researcher examining a sample in a Guwahati Biotech Park laboratory" width="900" height="1084" loading="lazy" decoding="async">
-          </span>
-          <figcaption><span class="dot" aria-hidden="true"></span> Wet labs · instrument-ready</figcaption>
-        </figure>
-        <figure class="hero-float hero-float--small">
-          <span class="hero-float-frame">
-            <img src="assets/img/main_entrance.jpg" alt="The main entrance of Guwahati Biotech Park with the Indian flag flying" width="680" height="385" loading="lazy" decoding="async">
-          </span>
-          <figcaption>Technology Incubation Centre</figcaption>
-        </figure>
-        <div class="hero-badge" aria-hidden="true"><strong>21</strong><span>acre campus<br>at Amingaon</span></div>
-        <a class="hero-hub-card" href="achievements.html" aria-label="Open the campus photo hub">
-          <span class="hero-hub-icon">${icon('camera')}</span>
-          <span class="hero-hub-copy"><strong>Campus photo hub</strong><small>Labs · people · milestones</small></span>
-          <span class="hero-hub-count">${ACHIEVEMENTS.length}</span>
-        </a>
+      <div class="hero-portal" data-hero-tilt>
+        <div class="hero-portal-frame">
+          <img src="assets/img/generated/hero-lab-ai.jpg" alt="A researcher at work inside a Guwahati Biotech Park laboratory" width="900" height="1081" loading="lazy" decoding="async">
+          <span class="hero-portal-tint" aria-hidden="true"></span>
+          <div class="hero-portal-caption">
+            <span class="hero-portal-tag">Inside the park</span>
+            <strong>The bench, the instruments, the people.</strong>
+            <span class="hero-portal-meta"><span class="dot" aria-hidden="true"></span> Technology Incubation Centre</span>
+          </div>
+        </div>
+        <dl class="hero-portal-stats">
+          <div><dt>21</dt><dd>acre campus</dd></div>
+          <div><dt>13</dt><dd>incubatees</dd></div>
+          <div><dt>8</dt><dd>facilities</dd></div>
+        </dl>
       </div>
     </div>
 

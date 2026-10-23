@@ -80,6 +80,14 @@ JSON-LD before finishing. Generated root `*.html`, `sitemap.xml`, `robots.txt` a
 
 ## Update log
 
+### 2026-10-23 17:20 IST — Hero redesign v2 (integrated arch, real parallax)
+- Replaced the scrapbook-style floating photo cards with a single arch-shaped lab portrait integrated into the hero, with a glass stats rail and no white frames.
+- Regenerated both AI images (Pollinations flux): new dusk glass-dome campus panorama and a scientist-at-the-bench portrait; watermark strips cropped and colour-graded.
+- Made the site header transparent over the homepage hero at the top of the page (inverse logo + light nav), reverting to the solid header on scroll.
+- Added real scroll-linked parallax (background + portal) and eased pointer parallax; added mobile/tablet and reduced-motion fallbacks.
+- Verification: build succeeds; hero markup, images and CSS present in dist/.
+
+
 ### 2026-10-23 15:45 IST — Immersive AI hero with 3D parallax
 - Generated two new AI images (Pollinations, flux model): `assets/img/generated/hero-campus-ai.jpg` (2048x1088 campus panorama) and `hero-lab-ai.jpg` (900x1084 lab portrait), graded in Pillow.
 - Rebuilt homepage hero as a full-bleed cinematic composition: AI campus image as background with pan/glow animations, dark gradient shade, premium headline, and a 3D floating stack (lab photo, entrance photo, 21-acre badge, campus photo-hub card) that tilts with pointer movement.

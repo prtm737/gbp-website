@@ -332,15 +332,17 @@
 
   .hero-immersive .hero-media-img,
   .hero-immersive .hero-media-glow,
-  .hero-immersive .hero-float,
-  .hero-immersive .hero-float--main,
-  .hero-immersive .hero-float--small,
   .hero-immersive .hero-scroll-track span {
     animation: none !important;
   }
 
-  .hero-immersive .hero-stack {
+  .hero-immersive .hero-media,
+  .hero-immersive .hero-portal {
     transform: none !important;
+  }
+
+  .hero-immersive .hero-portal-frame img {
+    transition: none !important;
   }
 
   .hero-photo {
