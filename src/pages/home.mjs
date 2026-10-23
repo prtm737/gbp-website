@@ -318,7 +318,7 @@ function hero() {
 
       <div class="hero-portal" data-hero-tilt>
         <div class="hero-portal-frame">
-          <img src="assets/img/generated/hero-lab-ai.jpg" alt="A researcher at work inside a Guwahati Biotech Park laboratory" width="900" height="1081" loading="lazy" decoding="async">
+          <img src="assets/img/generated/hero-lab-ai.jpg" alt="A researcher at work inside a Guwahati Biotech Park laboratory" width="900" height="1081" loading="eager" fetchpriority="low" decoding="async">
           <span class="hero-portal-tint" aria-hidden="true"></span>
           <div class="hero-portal-caption">
             <span class="hero-portal-tag">Inside the park</span>

@@ -1,6 +1,7 @@
 import { writeFile, readFile, copyFile, cp, rm, mkdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
-import { page } from './src/layout.mjs';
+import { page, searchIndex } from './src/layout.mjs';
 import { customSections } from './src/components.mjs';
 import { PAGES, SITE } from './src/data.mjs';
 import { homePage } from './src/pages/home.mjs';
@@ -63,8 +64,22 @@ const cssParts = [
   '50-responsive.css'
 ];
 const css = (await Promise.all(cssParts.map((f) => readFile(`src/css/${f}`, 'utf8')))).join('\n');
-await writeFile('assets/css/site.css', css, 'utf8');
-console.log(`built assets/css/site.css (${(Buffer.byteLength(css) / 1024).toFixed(1)} kB)`);
+const minifiedCss = css
+  .replace(/\/\*[\s\S]*?\*\//g, '')
+  .replace(/\s*\n\s*/g, '')
+  .replace(/[ \t]{2,}/g, ' ')
+  .trim();
+await writeFile('assets/css/site.css', minifiedCss, 'utf8');
+const cssHash = createHash('sha256').update(minifiedCss).digest('hex').slice(0, 10);
+const jsSource = await readFile('assets/js/site.js', 'utf8');
+const jsHash = createHash('sha256').update(jsSource).digest('hex').slice(0, 10);
+const versionAssets = (html) =>
+  html
+    .replaceAll('assets/css/site.css', `assets/css/site.css?v=${cssHash}`)
+    .replaceAll('assets/js/site.js', `assets/js/site.js?v=${jsHash}`);
+console.log(`built assets/css/site.css (${(Buffer.byteLength(minifiedCss) / 1024).toFixed(1)} kB, v${cssHash})`);
+await writeFile('search-index.json', JSON.stringify(searchIndex), 'utf8');
+console.log(`built search-index.json (${(Buffer.byteLength(JSON.stringify(searchIndex)) / 1024).toFixed(1)} kB)`);
 
 const pages = [
   {
@@ -138,7 +153,7 @@ for (const p of pages) {
       ticker: Boolean(p.ticker)
     })
   );
-  await writeFile(p.file, localiseDocs(html), 'utf8');
+  await writeFile(p.file, localiseDocs(versionAssets(html)), 'utf8');
   console.log(`built ${p.file} (${(Buffer.byteLength(html) / 1024).toFixed(1)} kB)`);
 }
 
@@ -161,7 +176,7 @@ const notFound = polish(
     </section>`
   })
 );
-await writeFile('404.html', localiseDocs(notFound), 'utf8');
+await writeFile('404.html', localiseDocs(versionAssets(notFound)), 'utf8');
 console.log('built 404.html');
 
 const base = SITE.url.replace(/\/$/, '');
@@ -199,7 +214,7 @@ console.log('built robots.txt');
 
 await rm('dist', { recursive: true, force: true });
 await mkdir('dist', { recursive: true });
-for (const file of ['index.html', ...pages.map((p) => p.file), '404.html', 'sitemap.xml', 'robots.txt']) {
+for (const file of ['index.html', ...pages.map((p) => p.file), '404.html', 'sitemap.xml', 'robots.txt', 'search-index.json']) {
   await copyFile(file, `dist/${file}`);
 }
 await cp('assets', 'dist/assets', { recursive: true });

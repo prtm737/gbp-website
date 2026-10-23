@@ -11,10 +11,17 @@
 
   var header = document.getElementById('site-header');
   if (header) {
-    var onScroll = function () {
+    var headerTick = false;
+    var syncHeader = function () {
       header.classList.toggle('is-scrolled', window.scrollY > 8);
+      headerTick = false;
     };
-    onScroll();
+    var onScroll = function () {
+      if (headerTick) return;
+      headerTick = true;
+      window.requestAnimationFrame(syncHeader);
+    };
+    syncHeader();
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
@@ -102,14 +109,29 @@
   var searchOpeners = document.querySelectorAll('[data-search-open]');
   var searchClose = document.querySelector('[data-search-close]');
   var index = [];
+  var indexReady = false;
+  var indexPromise = null;
   var activeResult = -1;
   var searchReturnFocus = null;
 
-  try {
-    var indexEl = document.getElementById('search-index');
-    if (indexEl) index = JSON.parse(indexEl.textContent || '[]');
-  } catch (e) {
-    index = [];
+  function loadSearchIndex() {
+    if (indexPromise) return indexPromise;
+    indexPromise = fetch('search-index.json', { credentials: 'same-origin' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Search index unavailable');
+        return response.json();
+      })
+      .then(function (data) {
+        index = Array.isArray(data) ? data : [];
+        indexReady = true;
+        return index;
+      })
+      .catch(function () {
+        index = [];
+        indexReady = true;
+        return index;
+      });
+    return indexPromise;
   }
 
   var searchIcon =
@@ -125,6 +147,10 @@
 
   function renderSearch(query) {
     if (!searchResults) return;
+    if (!indexReady) {
+      searchResults.innerHTML = '<p class="search-empty">Loading search…</p>';
+      return;
+    }
     var q = query.trim().toLowerCase();
     var matches = [];
     if (q) {
@@ -175,7 +201,11 @@
     } else {
       dialog.setAttribute('open', '');
     }
-    renderSearch(searchInput ? searchInput.value : '');
+    if (searchResults) searchResults.innerHTML = '<p class="search-empty">Loading search…</p>';
+    loadSearchIndex().then(function () {
+      if (!dialog.open && !dialog.hasAttribute('open')) return;
+      renderSearch(searchInput ? searchInput.value : '');
+    });
     if (searchInput) {
       searchInput.focus();
       searchInput.select();
@@ -249,6 +279,21 @@
       }
     }
   });
+
+  function warmSearchIndex() {
+    loadSearchIndex();
+  }
+
+  function scheduleWarmSearch() {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(warmSearchIndex, { timeout: 2200 });
+    } else {
+      window.setTimeout(warmSearchIndex, 1400);
+    }
+  }
+
+  if (document.readyState === 'complete') scheduleWarmSearch();
+  else window.addEventListener('load', scheduleWarmSearch);
 
   var newsList = document.getElementById('news-list');
   var newsSearch = document.getElementById('news-search');

@@ -80,6 +80,16 @@ JSON-LD before finishing. Generated root `*.html`, `sitemap.xml`, `robots.txt` a
 
 ## Update log
 
+### 2026-10-23 18:05 IST — Speed, security and smoothness pass
+- Self-hosted Manrope and Fraunces (3 latin woff2 files) with `preload`; removed Google Fonts requests and tightened CSP to `font-src 'self'`/`style-src 'self'`.
+- Lazy-loaded the search index: moved 13.3 kB out of every HTML page into `search-index.json`, fetched on idle/first search. HTML shrank from ~76 kB to ~62 kB.
+- Added content-hashed query strings for CSS/JS and immutable caching for versioned assets; fonts and images now have long-lived caching; added CORP and cross-domain policy headers.
+- Re-encoded oversized JPEGs with `scripts/optimize-images.py` (e.g. 747 kB -> 463 kB, 345 kB -> 81 kB, 172 kB -> 34 kB) without changing aspect ratios.
+- Reduced hero compositing cost (removed blend modes, disabled heavy hero effects/backdrop blur on small screens) and moved header scroll handling into `requestAnimationFrame`.
+- Minified the built CSS (`122 kB -> 103 kB`) while keeping source files readable.
+- Verification: build succeeds; CSS parses with 0 errors; local server returns HTML, fonts, CSS, JS and search index; JS syntax clean.
+
+
 ### 2026-10-23 17:20 IST — Hero redesign v2 (integrated arch, real parallax)
 - Replaced the scrapbook-style floating photo cards with a single arch-shaped lab portrait integrated into the hero, with a glass stats rail and no white frames.
 - Regenerated both AI images (Pollinations flux): new dusk glass-dome campus panorama and a scientist-at-the-bench portrait; watermark strips cropped and colour-graded.

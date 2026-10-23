@@ -4,7 +4,7 @@ import { SITE, NAV, SEARCH_INDEX, ACHIEVEMENTS, SECTIONS } from './data.mjs';
 const abs = (path) => `${SITE.url.replace(/\/$/, '')}/${String(path).replace(/^\//, '')}`;
 const canonicalFor = (page) => (page === 'home' ? `${SITE.url.replace(/\/$/, '')}/` : abs(`${page}.html`));
 
-const searchIndex = [
+export const searchIndex = [
   ...SEARCH_INDEX,
   ...ACHIEVEMENTS.map((item) => ({
     kind: 'Achievement',
@@ -131,9 +131,8 @@ function head({ title, description, page, ogImage, keywords, noindex = false }) 
   <meta name="twitter:image" content="${image}">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/generated/logo-mark.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css">
   <script>
     (function () {
@@ -351,7 +350,7 @@ function overlays() {
     </div>
   </dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script type="application/json" id="search-index">${JSON.stringify(searchIndex).replace(/</g, '\\u003c')}</script>`;
+`;
 }
 
 export function page({

@@ -858,3 +858,29 @@
     display: none;
   }
 }
+
+/* Keep the hero composited and cheap on small screens */
+@media (max-width: 760px) {
+  .hero-immersive .hero-media-img {
+    animation: none;
+    filter: saturate(1.02) contrast(1.03) brightness(0.84);
+  }
+
+  .hero-immersive .hero-media-glow,
+  .hero-immersive .hero-media-grain {
+    display: none;
+  }
+
+  .hero-immersive .hero-media-grid {
+    opacity: 0.55;
+  }
+
+  .site-header {
+    background: color-mix(in srgb, var(--paper) 96%, transparent);
+  }
+
+  .site-header.is-scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}

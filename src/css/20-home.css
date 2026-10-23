@@ -919,9 +919,8 @@ body[data-page="home"] .site-header:not(.is-scrolled) .header-cta {
   background:
     radial-gradient(58% 52% at 72% 28%, rgba(201, 242, 107, 0.34), transparent 62%),
     radial-gradient(62% 58% at 18% 78%, rgba(31, 122, 86, 0.42), transparent 66%);
-  filter: blur(28px);
-  mix-blend-mode: screen;
-  opacity: 0.75;
+  filter: blur(26px);
+  opacity: 0.7;
   animation: heroGlowDrift 16s ease-in-out infinite alternate;
 }
 
@@ -941,8 +940,7 @@ body[data-page="home"] .site-header:not(.is-scrolled) .header-cta {
   inset: 0;
   background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 3px 3px;
-  opacity: 0.35;
-  mix-blend-mode: overlay;
+  opacity: 0.28;
 }
 
 .hero-immersive .hero-shade {
